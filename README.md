@@ -50,6 +50,6 @@ GIF Images
 
 <!-- Stack Icon Refernces -->
 
-[js]: /images/stack/javascript.svg
-[ts]: /images/stack/typescript.svg
-[react]: /images/stack/react.svg
+[js]: ./src/images/stack/javascript.svg
+[ts]: ./src/images/stack/typescript.svg
+[react]: ./src/images/stack/react.svg
