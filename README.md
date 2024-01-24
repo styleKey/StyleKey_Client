@@ -14,9 +14,7 @@
 
 [3.구현 기능](#구현-기능)
 
-[4.해당 프로젝트를 통해 배운 것들](#해당-프로젝트를-통해-배운-것들)
-
-[5.아쉬운 점](#아쉬운-점)
+[4.Trouble Shooting](#Trouble-Shooting)
 
 <br>
 
@@ -52,17 +50,12 @@ GIF Images
 
 <br>
 
-## 해당 프로젝트를 통해 배운 것들
+## Trobule Shooting
 
 <p align="justify">
 
-- GlobalStyle
-  - css 초기 설정 시, 불필요한 선언을 줄이기 위해 GlobalStyle.ts 파일에서 기본적인 설정을 해준다.
-- React Query와 Redux의 차이
-  - 리액트 쿼리는 서버와 통신할 때, 리덕스는 UI가 바뀌는 state를 담당할 때 사용된다. 
-
-## 아쉬운 점
-
+- 여기에는 프로젝트 진행하면서 겪었던 Trouble 및 해결법 정리
+- 
 </p>
 
 <br>
