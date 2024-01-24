@@ -1,5 +1,12 @@
+import FavoriteButtonLogo from './images/FavoriteButton.svg';
+import { Styled } from './styles/Favorite.styles';
+
 function Favorite() {
-  return <div>sdfs</div>;
+  return (
+    <Styled.FavoriteButton>
+      <img src={FavoriteButtonLogo} alt="Favorite Button" />
+    </Styled.FavoriteButton>
+  );
 }
 
 export default Favorite;
