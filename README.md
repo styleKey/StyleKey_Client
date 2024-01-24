@@ -50,7 +50,7 @@ GIF Images
 
 <br>
 
-## Trobule Shooting
+## Trouble Shooting
 
 <p align="justify">
 
