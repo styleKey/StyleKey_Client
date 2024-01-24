@@ -1,15 +1,22 @@
+import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
+import Header from './components/header/Header.tsx';
+
+const CenteredContainer = styled.div`
+  max-width: 390px; // 최대 가로 길이 (피그마에 있는 대로)
+  min-width: 320px; // 최소 가로 길이 (아이폰 SE)
+  margin: 0 auto; // 가로 중앙 정렬
+  height: 100vh; // 세로 길이는 viewheight 전체 퍼센트 차지
+  background-color: red;
+`;
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <div style={{ fontSize: 20 }}>
-        <p>반갑습니다</p>
-        <a href="#">이동하기</a>
-        <div>dfjkdjfk</div>
-        안녕하세요 아아아앙아 안녕하세요 안녕하세요 안녕하세요 반갑습니다
-      </div>
+      <CenteredContainer>
+        <Header />
+      </CenteredContainer>
     </>
   );
 }
