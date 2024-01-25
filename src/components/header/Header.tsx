@@ -2,20 +2,20 @@ import Hamburger from './Hamburger.tsx';
 import Favorite from './Favorite.tsx';
 import Login from './Login.tsx';
 import Logo from './Logo.tsx';
-import { Styled } from './styles/Header.styles.tsx';
+import * as He from './styles/Header.styles.tsx';
 
 function Header() {
   return (
-    <Styled.NavBar>
-      <Styled.LeftSection>
+    <He.NavBar>
+      <He.LeftSection>
         <Hamburger />
-      </Styled.LeftSection>
+      </He.LeftSection>
       <Logo />
-      <Styled.RightSection>
+      <He.RightSection>
         <Favorite />
         <Login />
-      </Styled.RightSection>
-    </Styled.NavBar>
+      </He.RightSection>
+    </He.NavBar>
   );
 }
 

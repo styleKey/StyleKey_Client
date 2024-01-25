@@ -1,11 +1,11 @@
 import FavoriteButtonLogo from './images/FavoriteButton.svg';
-import { Styled } from './styles/Favorite.styles';
+import * as Fa from './styles/HeaderButtons.styles';
 
 function Favorite() {
   return (
-    <Styled.FavoriteButton>
+    <Fa.HeaderButtons>
       <img src={FavoriteButtonLogo} alt="Favorite Button" />
-    </Styled.FavoriteButton>
+    </Fa.HeaderButtons>
   );
 }
 

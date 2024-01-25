@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const FavoriteButton = styled.div`
+export const HeaderButtons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,3 @@ const FavoriteButton = styled.div`
   margin-left: 10px;
   cursor: pointer;
 `;
-
-export const Styled = {
-  FavoriteButton,
-};

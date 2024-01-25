@@ -1,11 +1,11 @@
 import LoginLogo from './images/LoginButton.svg';
-import { Styled } from './styles/Login.styles';
+import * as Li from './styles/HeaderButtons.styles';
 
 function Login() {
   return (
-    <Styled.LoginButton>
+    <Li.HeaderButtons>
       <img src={LoginLogo} alt="Login Button" />
-    </Styled.LoginButton>
+    </Li.HeaderButtons>
   );
 }
 

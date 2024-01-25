@@ -1,11 +1,11 @@
 import HamburgerButtonLogo from './images/Hamburgerbutton.svg';
-import { Styled } from './styles/Hamburger.styles';
+import * as Ha from './styles/HeaderButtons.styles';
 
 function Hamburger() {
   return (
-    <Styled.HamburgerButton>
+    <Ha.HeaderButtons>
       <img src={HamburgerButtonLogo} alt="Hamburger Button" />
-    </Styled.HamburgerButton>
+    </Ha.HeaderButtons>
   );
 }
 
