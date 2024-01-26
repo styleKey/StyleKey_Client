@@ -57,32 +57,37 @@ const Homepage: React.FC = () => {
 
   return (
     <Ho.Homepage>
-      <Ho.Container>
-        <Ho.Arrow direction="prev" onClick={moveToPrevSlide}>
-          ←
-        </Ho.Arrow>
-        {data.map((character) => (
-          <Ho.Slide
-            key={character.id}
-            className={character.id === slideIndex ? 'active' : undefined}
-          >
-            <Photo src={character.img} />
-          </Ho.Slide>
-        ))}
-        <Ho.Arrow direction="next" onClick={moveToNextSlide}>
-          →
-        </Ho.Arrow>
-        <Ho.DotContainer>
+      <Ho.HomeTop>
+        <Ho.Container>
+          <Ho.Arrow direction="prev" onClick={moveToPrevSlide}>
+            ←
+          </Ho.Arrow>
           {data.map((character) => (
-            <Ho.Dot
+            <Ho.Slide
               key={character.id}
               className={character.id === slideIndex ? 'active' : undefined}
-              onClick={() => moveDot(character.id)}
-            />
+            >
+              <Photo src={character.img} />
+            </Ho.Slide>
           ))}
-        </Ho.DotContainer>
-      </Ho.Container>
-      <Ho.TestButton>테스트 버튼</Ho.TestButton>
+          <Ho.Arrow direction="next" onClick={moveToNextSlide}>
+            →
+          </Ho.Arrow>
+          <Ho.DotContainer>
+            {data.map((character) => (
+              <Ho.Dot
+                key={character.id}
+                className={character.id === slideIndex ? 'active' : undefined}
+                onClick={() => moveDot(character.id)}
+              />
+            ))}
+          </Ho.DotContainer>
+        </Ho.Container>
+      </Ho.HomeTop>
+      <Ho.HomeMiddle>
+        <Ho.TestButton>테스트 버튼</Ho.TestButton>
+      </Ho.HomeMiddle>
+      <Ho.HomeBottom>sdsd</Ho.HomeBottom>
     </Ho.Homepage>
   );
 };

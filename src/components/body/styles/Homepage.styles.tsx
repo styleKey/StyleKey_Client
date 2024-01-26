@@ -1,20 +1,42 @@
 import styled from 'styled-components';
 
 export const Homepage = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
   margin: 0 16px;
-  padding-top: 90px;
-  height: 2000px;
   background-color: grey;
 `;
 
+export const HomeTop = styled.div`
+  background-color: red;
+  display: flex;
+  align-items: center;
+  flex: 0.7;
+`;
+
+export const HomeMiddle = styled.div`
+  background-color: black;
+  display: flex;
+  align-items: center;
+  flex: 0.2;
+`;
+
+export const HomeBottom = styled.div`
+  flex:1
+  background-color: blue;
+  `;
+
 export const Container = styled.div`
   width: 296px;
-  height: 296px;
+  height: 406px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   margin: 0 auto;
+  background-color: black;
 `;
 
 interface ArrowProps {
@@ -52,6 +74,7 @@ export const Slide = styled.div`
 export const DotContainer = styled.div`
   position: absolute;
   bottom: 0;
+  margin-bottom: 20px;
   width: 150px;
   display: flex;
   justify-content: space-between;
@@ -72,9 +95,6 @@ export const TestButton = styled.button`
   width: 50%;
   height: 49px;
   background-color: whie;
-  position: absolute;
   border-radius: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 100px;
+  transform: translateX(50%);
 `;
