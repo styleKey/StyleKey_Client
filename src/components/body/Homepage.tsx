@@ -60,7 +60,7 @@ const Homepage: React.FC = () => {
       <Ho.HomeTop>
         <Ho.Container>
           <Ho.Arrow direction="prev" onClick={moveToPrevSlide}>
-            ←
+            <p>&#8249;</p>
           </Ho.Arrow>
           {data.map((character) => (
             <Ho.Slide
@@ -71,7 +71,7 @@ const Homepage: React.FC = () => {
             </Ho.Slide>
           ))}
           <Ho.Arrow direction="next" onClick={moveToNextSlide}>
-            →
+            <p>&#8250;</p>
           </Ho.Arrow>
           <Ho.DotContainer>
             {data.map((character) => (
@@ -87,7 +87,172 @@ const Homepage: React.FC = () => {
       <Ho.HomeMiddle>
         <Ho.TestButton>테스트 버튼</Ho.TestButton>
       </Ho.HomeMiddle>
-      <Ho.HomeBottom>sdsd</Ho.HomeBottom>
+      <Ho.HomeBottom>
+        <div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+          <div>
+            <div>sdfsdf</div>
+          </div>
+          <div>
+            <div>aaaaa</div>
+          </div>
+          <div>
+            <div>sdf</div>
+          </div>
+        </div>
+      </Ho.HomeBottom>
     </Ho.Homepage>
   );
 };

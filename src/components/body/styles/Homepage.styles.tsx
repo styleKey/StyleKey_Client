@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
+//HomeTop, HomeMiddle의 height는 HomeBottom의 height에 따라서 조정 필요할 듯.
+
 export const Homepage = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow-y: auto;
   margin: 0 16px;
   background-color: grey;
 `;
@@ -13,20 +13,19 @@ export const HomeTop = styled.div`
   background-color: red;
   display: flex;
   align-items: center;
-  flex: 0.7;
+  height: 65vh;
 `;
 
 export const HomeMiddle = styled.div`
   background-color: black;
   display: flex;
   align-items: center;
-  flex: 0.2;
+  height: 25vh;
 `;
 
 export const HomeBottom = styled.div`
-  flex:1
   background-color: blue;
-  `;
+`;
 
 export const Container = styled.div`
   width: 296px;
@@ -53,9 +52,18 @@ export const Arrow = styled.button<ArrowProps>`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: rgba(169, 169, 169, 0.7);
+  background-color: rgba(169, 169, 169, 0.5);
   z-index: 1;
   cursor: pointer;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > p {
+    margin-top: 2px; /* 상단 마진으로 위치 조정 */
+    margin-left: 0px;
+    margin-bottom: 5px; /* 하단 마진으로 위치 조정 */
+  }
 `;
 
 export const Slide = styled.div`
@@ -92,9 +100,9 @@ export const Dot = styled.div`
 `;
 
 export const TestButton = styled.button`
-  width: 50%;
-  height: 49px;
-  background-color: whie;
+  width: 70%;
+  height: 30%;
+  background-color: white;
   border-radius: 10px;
-  transform: translateX(50%);
+  margin: 0 auto;
 `;
