@@ -58,12 +58,32 @@ GIF Images
 
 ## Trouble Shooting
 
+### CSS 관련
+
 <p align="justify">
 
-- 여기에는 프로젝트 진행하면서 겪었던 Trouble 및 해결법 정리
-- 
+- 컴포넌트가 3개 있다면, 토스처럼 컴포넌트 2개는 항상 유저가 확인하고 나머지 컴포넌트는 스크롤해서 볼 수 있는 방법을 몰랐다.
+  그래서 일단은 viewport를 생각해서 컴포넌트 2개의 vh를 기기별로 확인하면서 맞춰봤는데, 아이폰 4같은 기종에서는 화면이 뭉개지는 현상이 있다.
+  
+  ```js
+  export const HomeTop = styled.div`
+  background-color: red;
+  display: flex;
+  align-items: center;
+  height: 65vh;
+  `
+
 </p>
 
+- 토스 온보딩 페이지
+![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/f2ec7a45-8ce9-4039-bfe4-5aae22662a73)
+
+
+- 스크롤 하기 전 화면
+![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/eec6fb78-d99b-47d0-ad01-c8b2ecbe84c1)
+
+- 스크롤 하고 난 화면
+![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/5a7166b0-6277-4469-9858-13e6aef5c4f6)
 <br>
 
 <!-- Stack Icon Refernces -->
