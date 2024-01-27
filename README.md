@@ -78,12 +78,12 @@ GIF Images
 - 토스 온보딩 페이지
 ![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/f2ec7a45-8ce9-4039-bfe4-5aae22662a73)
 
-
 - 스크롤 하기 전 화면
-![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/eec6fb78-d99b-47d0-ad01-c8b2ecbe84c1)
+![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/ebc14bef-06bd-4477-bfce-253fa1221ceb)
 
 - 스크롤 하고 난 화면
-![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/5a7166b0-6277-4469-9858-13e6aef5c4f6)
+![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/887ac21b-b212-48cd-9275-701a9d1f8825)
+
 <br>
 
 <!-- Stack Icon Refernces -->
