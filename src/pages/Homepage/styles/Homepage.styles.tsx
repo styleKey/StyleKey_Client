@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const blink = keyframes`
+50%{
+  opacity:0;
+}`;
 
 //HomeTop, HomeMiddle의 height는 HomeBottom의 height에 따라서 조정 필요할 듯.
 
@@ -16,12 +21,13 @@ export const HomeTop = styled.div`
 
 export const HomeMiddle = styled.div`
   display: flex;
-  padding-top: 40px;
+  flex-direction: column;
+  padding-top: 10px;
   height: 25vh;
 `;
 
 export const HomeBottom = styled.div`
-  background-color: blue;
+  background-color: lightgreen;
 `;
 
 export const Container = styled.div`
@@ -97,8 +103,14 @@ export const Dot = styled.div`
 
 export const TestButton = styled.button`
   width: 70%;
-  height: 40%;
+  height: 30%;
   background-color: white;
   border-radius: 10px;
   margin: 0 auto;
+  margin-bottom: 30px;
+`;
+
+export const BlinkingImage = styled.img`
+  animation: ${blink} 2.5s linear infinite;
+  cursor: pointer;
 `;

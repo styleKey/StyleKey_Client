@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as Ho from './styles/Homepage.styles';
 import styled from 'styled-components';
 
 import a from './images/a.png';
 import b from './images/2.png';
 import c from './images/3.png';
+
+import DownButton from './images/Downbutton.svg';
 
 interface Character {
   id: number;
@@ -27,6 +29,21 @@ const data: Character[] = [
 ];
 
 const Homepage: React.FC = () => {
+  const homeBottomRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    if (homeBottomRef.current) {
+      const homeBottomPosition =
+        homeBottomRef.current.getBoundingClientRect().top;
+      const offsetPosition = homeBottomPosition + window.scrollY - 99;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const [slideIndex, setSlideIndex] = useState(1);
 
   const moveToPrevSlide = () => {
@@ -86,8 +103,17 @@ const Homepage: React.FC = () => {
       </Ho.HomeTop>
       <Ho.HomeMiddle>
         <Ho.TestButton>테스트 버튼</Ho.TestButton>
+        <Ho.BlinkingImage
+          src={DownButton}
+          alt="스크롤 버튼"
+          style={{
+            width: '32px',
+            margin: '0 auto',
+          }}
+          onClick={scrollToBottom}
+        ></Ho.BlinkingImage>
       </Ho.HomeMiddle>
-      <Ho.HomeBottom>
+      <Ho.HomeBottom ref={homeBottomRef}>
         <div>
           <div>
             <div>sdfsdf</div>
