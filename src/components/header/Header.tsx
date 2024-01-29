@@ -4,7 +4,12 @@ import Login from './Login.tsx';
 import Logo from './Logo.tsx';
 import * as He from './styles/Header.styles.tsx';
 
+import { useSelector } from 'react-redux';
+import { AppState } from '../../store/index.tsx';
+
 function Header() {
+  const isAuth = useSelector((state: AppState) => state.auth.isAuthenticated);
+
   return (
     <He.NavBar>
       <He.LeftSection>
@@ -12,8 +17,14 @@ function Header() {
       </He.LeftSection>
       <Logo />
       <He.RightSection>
-        <Favorite />
-        <Login />
+        {isAuth ? (
+          <>
+            <Favorite />
+            <Login />
+          </>
+        ) : (
+          <Login />
+        )}
       </He.RightSection>
     </He.NavBar>
   );
