@@ -6,20 +6,17 @@ export const Homepage = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 16px;
-  background-color: grey;
 `;
 
 export const HomeTop = styled.div`
-  background-color: red;
   display: flex;
   align-items: center;
   height: 65vh;
 `;
 
 export const HomeMiddle = styled.div`
-  background-color: black;
   display: flex;
-  align-items: center;
+  padding-top: 40px;
   height: 25vh;
 `;
 
@@ -35,7 +32,6 @@ export const Container = styled.div`
   align-items: center;
   position: relative;
   margin: 0 auto;
-  background-color: black;
 `;
 
 interface ArrowProps {
@@ -101,7 +97,7 @@ export const Dot = styled.div`
 
 export const TestButton = styled.button`
   width: 70%;
-  height: 30%;
+  height: 40%;
   background-color: white;
   border-radius: 10px;
   margin: 0 auto;

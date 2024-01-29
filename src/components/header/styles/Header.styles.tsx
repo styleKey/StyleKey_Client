@@ -11,7 +11,7 @@ export const NavBar = styled.div`
   align-items: center;
   height: 99px;
   border-bottom: 1px solid black;
-  background-color: lightblue;
+  background-color: white;
 `;
 
 export const LeftSection = styled.div`
