@@ -1,7 +1,10 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/header/Header.tsx';
-import Body from './components/body/Homepage.tsx';
+import HomePage from './pages/Homepage/Homepage.tsx';
+import Homepage from './pages/Homepage/Homepage.tsx';
 
 const CenteredContainer = styled.div`
   max-width: 390px; // 최대 가로 길이 (피그마에 있는 대로)
@@ -16,8 +19,12 @@ function App() {
     <>
       <GlobalStyle />
       <CenteredContainer>
-        <Header />
-        <Body />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Homepage />}></Route>
+          </Routes>
+        </BrowserRouter>
       </CenteredContainer>
     </>
   );
