@@ -16,14 +16,14 @@ export const Homepage = styled.div`
 export const HomeTop = styled.div`
   display: flex;
   align-items: center;
-  height: 65vh;
+  height: 60vh;
 `;
 
 export const HomeMiddle = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
-  height: 25vh;
+  height: 29vh;
+  position: relative;
 `;
 
 export const HomeBottom = styled.div`
@@ -107,10 +107,14 @@ export const TestButton = styled.button`
   background-color: white;
   border-radius: 10px;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-top: 30px;
 `;
 
 export const BlinkingImage = styled.img`
   animation: ${blink} 2.5s linear infinite;
   cursor: pointer;
+  position: absolute;
+  left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
+  transform: translateX(-50%);
+  bottom: 40px;
 `;
