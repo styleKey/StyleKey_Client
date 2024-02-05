@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../store/auth.tsx';
+import { authActions } from '../store/auth';
 
-const AuthRedirectPage = () => {
+const RedirectPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,7 +20,7 @@ const AuthRedirectPage = () => {
 
       // 인증 처리가 완료된 후 메인 페이지 또는 다른 페이지로 리디렉션
       dispatch(authActions.login()); //리덕스 로그인 아이콘 상태관리
-      navigate('/');
+      //navigate('/');
     } else {
       // code가 없는 경우, 에러 처리 또는 홈으로 리디렉션
       console.log('인증 코드가 URL에 포함되어 있지 않습니다.');
@@ -30,4 +30,4 @@ const AuthRedirectPage = () => {
   return <div>인증 중입니다. 잠시만 기다려 주세요...</div>;
 };
 
-export default AuthRedirectPage;
+export default RedirectPage;

@@ -1,6 +1,6 @@
 import NLoginLogo from './images/NLoginButton.svg';
 import LoginLogo from './images/LoginButton.svg';
-import * as Li from './styles/HeaderButtons.styles';
+import { HeaderButtons } from './styles/Header.styles.tsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../../store/index.tsx';
 import { authActions } from '../../store/auth.tsx';
@@ -28,7 +28,7 @@ function Login() {
   };
 
   return (
-    <Li.HeaderButtons>
+    <HeaderButtons>
       {isAuth ? (
         <img
           src={LoginLogo}
@@ -46,7 +46,7 @@ function Login() {
           style={{ width: '26px', height: '26px' }}
         />
       )}
-    </Li.HeaderButtons>
+    </HeaderButtons>
   );
 }
 

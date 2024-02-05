@@ -3,7 +3,7 @@ import StylekeyLogo from './images/stylekeylogo.svg';
 import GoogleLogo from './images/googlelogin.svg';
 import * as Lo from './styles/Loginpage.styles';
 
-import KakaoLogin from '../../components/kakaoauth/KakaoLogin';
+import KakaoLogin from '../../oauth/Kakao/KakaoLogin';
 
 function LoginPage() {
   return (
