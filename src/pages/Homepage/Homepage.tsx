@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as Ho from './styles/Homepage.styles';
 import styled from 'styled-components';
+import { MobileLayout } from '../../components/common/Layout';
 
 import a from './images/a.png';
 import b from './images/2.png';
@@ -73,7 +74,7 @@ const Homepage: React.FC = () => {
   `;
 
   return (
-    <Ho.Homepage>
+    <MobileLayout>
       <Ho.HomeTop>
         <Ho.Container>
           <Ho.Arrow direction="prev" onClick={moveToPrevSlide}>
@@ -279,7 +280,7 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </Ho.HomeBottom>
-    </Ho.Homepage>
+    </MobileLayout>
   );
 };
 
