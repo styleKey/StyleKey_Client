@@ -10,7 +10,6 @@ export const LoginpageTop = styled.div`
   flex-direction: column;
   width: 100%;
   height: 45%;
-
   justify-content: center;
 `;
 
@@ -58,7 +57,7 @@ export const LoginpageBottomText = styled.div`
 
 export const LoginpageBottomButton = styled.div`
   height: 50%;
-  maring: 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

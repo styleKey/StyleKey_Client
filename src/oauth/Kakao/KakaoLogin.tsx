@@ -2,9 +2,9 @@ import KakaoLogo from '../../pages/Loginpage/images/kakaologin.svg';
 
 const KakaoLogin = () => {
   const handleKakaoLogin = () => {
-    const K_REST_API_KEY = '0863428c06e9c37bf600d68470c14ee0';
-    const K_REDIRECT_URI = 'http://localhost:5173/oauth/callback/kakao';
-    window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${K_REST_API_KEY}&redirect_uri=${K_REDIRECT_URI}&response_type=code`;
+    const apikey = import.meta.env.VITE_API_KEY;
+    const redirectUri = import.meta.env.VITE_REDIRECT_URI;
+    window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${apikey}&redirect_uri=${redirectUri}&response_type=code`;
   };
 
   return (
