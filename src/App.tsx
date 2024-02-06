@@ -1,12 +1,11 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/header/Header.tsx';
-import Header2 from './components/header/Header2.tsx';
 import LoginPage from './pages/Loginpage/Loginpage.tsx';
 import Homepage from './pages/Homepage/Homepage.tsx';
-import KakaoRedirect from './components/kakaoauth/KakaoRedirect.tsx';
+import RedirectPage from './oauth/Redirect.tsx';
 import Login from './components/loginpage/Login.tsx';
 
 const CenteredContainer = styled.div`
@@ -20,27 +19,18 @@ const CenteredContainer = styled.div`
 const queryClient = new QueryClient();
 
 function App() {
-  function AppHeader() {
-    const location = useLocation();
-
-    if (location.pathname === '/login') {
-      return <Header2 />;
-    }
-
-    return <Header />;
-  }
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
         <CenteredContainer>
           <BrowserRouter>
-            <AppHeader />
+            <Header />
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/logintemp" element={<Login />}></Route>
-              <Route path="/oauth/callback/kakao" element={<KakaoRedirect />} />
+              <Route path="/oauth/callback/*" element={<RedirectPage />} />
             </Routes>
           </BrowserRouter>
         </CenteredContainer>
