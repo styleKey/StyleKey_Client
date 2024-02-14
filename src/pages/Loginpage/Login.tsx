@@ -1,9 +1,16 @@
-import { MobileLayout } from '../common/Layout';
-import * as L from './Login.style';
+import { MobileLayout } from '../../components/common/Layout';
+import * as L from './styles/Login.style';
 import stylekeylogo from '../../pages/Loginpage/images/stylekeylogo.svg';
-import { Caption, TextRegular } from '../common/Text';
+import { Caption, TextRegular } from '../../components/common/Text';
+
+import axios from 'axios';
 
 function Login() {
+  const requestGet = async () => {
+    const response = await axios.get('http://localhost:9000/api/test-question');
+    return response;
+  };
+
   return (
     <MobileLayout>
       <L.ImgContainer src={stylekeylogo} alt="logo" />
@@ -14,7 +21,7 @@ function Login() {
       </TextRegular>
       <L.ButtonContainer>
         <L.SnsCaption> SNS 계정으로 로그인</L.SnsCaption>
-        <L.KakaoButton />
+        <L.KakaoButton onClick={requestGet} />
         <L.GoogleButton />
       </L.ButtonContainer>
     </MobileLayout>

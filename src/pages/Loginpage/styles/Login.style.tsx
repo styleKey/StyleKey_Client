@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Caption } from '../common/Text';
+import { Caption } from '../../../components/common/Text';
 
 export const ImgContainer = styled.img`
   height: 174px;
