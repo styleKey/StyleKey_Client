@@ -3,10 +3,9 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/header/Header.tsx';
-import LoginPage from './pages/Loginpage/Loginpage.tsx';
 import Homepage from './pages/Homepage/Homepage.tsx';
 import RedirectPage from './oauth/Redirect.tsx';
-import Login from './components/loginpage/Login.tsx';
+import Login from './pages/Loginpage/Login.tsx';
 
 const CenteredContainer = styled.div`
   max-width: 390px; // 최대 가로 길이 (피그마에 있는 대로)
@@ -27,10 +26,25 @@ function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/logintemp" element={<Login />} />
-              <Route path="/oauth/callback/*" element={<RedirectPage />} />
+              <Route path="/" element={<Homepage />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/mypage">
+                <Route path="/mypage/history"></Route>
+                <Route path="/mypage/favorite"></Route>
+              </Route>
+              <Route
+                path="/oauth/callback/:provider"
+                element={<RedirectPage />}
+              />
+              <Route path="/test" />
+              <Route path="/points">
+                <Route path="/points/detail">
+                  <Route path="/points/detail/cordinate" />
+                </Route>
+              </Route>
+              <Route path="/brands">
+                <Route path="/brands/detail" />
+              </Route>
             </Routes>
           </BrowserRouter>
         </CenteredContainer>
