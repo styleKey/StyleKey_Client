@@ -75,7 +75,7 @@ export const Slide = styled.div`
   align-items: center;
   row-gap: 20px;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 1s ease-in-out;
   &.active {
     opacity: 1;
   }

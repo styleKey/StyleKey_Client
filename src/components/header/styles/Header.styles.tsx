@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const NavBar = styled.div`
   position: sticky;
   top: 0;
-  margin: 0 16px;
+  margin: 0 1rem;
   z-index: 1000;
   display: flex;
   flex-direction: row;
@@ -16,7 +16,7 @@ export const NavBar = styled.div`
 
 export const Logo = styled.div`
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1.3rem;
 `;
 
 export const HeaderButtons = styled.div`
