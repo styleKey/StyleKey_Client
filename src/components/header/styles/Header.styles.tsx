@@ -8,7 +8,7 @@ export const NavBar = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-align: center;
+  text-align: center;
   height: 99px;
   border-bottom: 1px solid black;
   background-color: white;
