@@ -4,6 +4,7 @@ import GoogleLogo from './images/googlelogin.svg';
 import * as Lo from './styles/Loginpage.styles';
 
 import KakaoLogin from '../../oauth/Kakao/KakaoLogin';
+import GoogleLogin from '../../oauth/Google/GoggleLogin';
 
 function LoginPage() {
   return (
@@ -26,11 +27,7 @@ function LoginPage() {
         <Lo.LoginpageBottomText>SNS 계정으로 로그인</Lo.LoginpageBottomText>
         <Lo.LoginpageBottomButton>
           <KakaoLogin />
-          <img
-            src={GoogleLogo}
-            alt="구글 로고"
-            style={{ width: '80%', cursor: 'pointer' }}
-          />
+          <GoogleLogin />
         </Lo.LoginpageBottomButton>
       </Lo.LoginpageBottom>
     </Lo.LoginPage>

@@ -27,9 +27,9 @@ function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="/" element={<Homepage />}></Route>
-              <Route path="/login" element={<LoginPage />}></Route>
-              <Route path="/logintemp" element={<Login />}></Route>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/logintemp" element={<Login />} />
               <Route path="/oauth/callback/*" element={<RedirectPage />} />
             </Routes>
           </BrowserRouter>
