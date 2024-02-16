@@ -3,13 +3,39 @@ import * as L from './styles/Login.style';
 import stylekeylogo from '../../pages/Loginpage/images/stylekeylogo.svg';
 import { Caption, TextRegular } from '../../components/common/Text';
 
-import axios from 'axios';
+import { requestGet } from '../../util/http';
+import { useQuery } from '@tanstack/react-query';
+import { Key } from 'react';
 
 function Login() {
-  const requestGet = async () => {
-    const response = await axios.get('http://localhost:9000/api/test-question');
-    return response;
-  };
+  const { data } = useQuery({
+    queryKey: ['questions'],
+    queryFn: requestGet,
+  });
+
+  let content;
+
+  if (data) {
+    content = (
+      <ul>
+        {data.map((question: { id: Key; content: string; answers: any[] }) => (
+          <li key={question.id}>
+            <p>{question.content}</p>
+            <ul>
+              {question.answers.map((answer) => (
+                <li key={answer.id}>
+                  <p>{answer.content}</p>
+                  {answer.image && (
+                    <img src={answer.image} alt={answer.content} />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   return (
     <MobileLayout>
@@ -22,7 +48,8 @@ function Login() {
       </TextRegular>
       <L.ButtonContainer>
         <L.SnsCaption> SNS 계정으로 로그인</L.SnsCaption>
-        <L.KakaoButton onClick={requestGet} />
+        {content}
+        <L.KakaoButton />
         <L.GoogleButton />
       </L.ButtonContainer>
     </MobileLayout>
