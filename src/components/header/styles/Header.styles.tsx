@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const NavBar = styled.div`
   position: sticky;
   top: 0;
-  margin: 0 1rem;
+  margin: 0 16px;
   z-index: 1000;
   display: flex;
   flex-direction: row;
@@ -12,6 +12,15 @@ export const NavBar = styled.div`
   height: 99px;
   border-bottom: 1px solid black;
   background-color: white;
+
+  //iphone 6/7/8 plus
+  @media (max-height: 737px) {
+    height: 80px;
+  }
+  //iphone SE
+  @media (max-height: 668px) {
+    height: 70px;
+  }
 `;
 
 export const Logo = styled.div`
