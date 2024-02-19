@@ -6,6 +6,8 @@ import { Caption, TextRegular } from '../../components/common/Text';
 import { requestGet } from '../../util/http';
 import { useQuery } from '@tanstack/react-query';
 import { Key } from 'react';
+import KakaoLogin from '../../oauth/Kakao/KakaoLogin';
+import GoogleLogin from '../../oauth/Google/GoggleLogin';
 
 function Login() {
   const { data } = useQuery({
@@ -49,8 +51,8 @@ function Login() {
       <L.ButtonContainer>
         <L.SnsCaption> SNS 계정으로 로그인</L.SnsCaption>
         {content}
-        <L.KakaoButton />
-        <L.GoogleButton />
+        <KakaoLogin />
+        <GoogleLogin />
       </L.ButtonContainer>
     </MobileLayout>
   );
