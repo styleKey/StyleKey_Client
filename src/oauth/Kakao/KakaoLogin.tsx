@@ -1,4 +1,5 @@
 import * as L from '../../pages/Loginpage/styles/Login.style';
+import KakaoLogo from './Kakaotalk.svg';
 
 const KakaoLogin = () => {
   const handleKakaoLogin = () => {
@@ -7,7 +8,19 @@ const KakaoLogin = () => {
     window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${apikey}&redirect_uri=${redirectUri}&response_type=code`;
   };
 
-  return <L.KakaoButton onClick={handleKakaoLogin} />;
+  return (
+    <L.KakaoButton onClick={handleKakaoLogin}>
+      <img
+        src={KakaoLogo}
+        alt="카카오 로고"
+        style={{
+          position: 'absolute',
+          left: '20px',
+        }}
+      />
+      KAKAO로 로그인
+    </L.KakaoButton>
+  );
 };
 
 export default KakaoLogin;

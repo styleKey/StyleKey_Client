@@ -38,6 +38,8 @@ export const LoginButton = styled.button`
   height: 46px;
   border-radius: 10px;
   border: none;
+  font-size: 20px;
+  position: relative;
 `;
 
 export const KakaoButton = styled(LoginButton)`
