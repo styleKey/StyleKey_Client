@@ -15,8 +15,6 @@ function Header() {
   const location = useLocation();
   const isLoginPath = location.pathname === '/login';
 
-  console.log(isLoginPath);
-  console.log(isAuth);
   return (
     <He.NavBar>
       <He.LeftSection>

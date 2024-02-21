@@ -1,4 +1,4 @@
-import KakaoLogo from '../../pages/Loginpage/images/kakaologin.svg';
+import * as L from '../../pages/Loginpage/styles/Login.style';
 
 const KakaoLogin = () => {
   const handleKakaoLogin = () => {
@@ -7,14 +7,7 @@ const KakaoLogin = () => {
     window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${apikey}&redirect_uri=${redirectUri}&response_type=code`;
   };
 
-  return (
-    <img
-      src={KakaoLogo}
-      alt="카카오 로고"
-      style={{ width: '80%', cursor: 'pointer', marginBottom: '10px' }}
-      onClick={handleKakaoLogin}
-    />
-  );
+  return <L.KakaoButton onClick={handleKakaoLogin} />;
 };
 
 export default KakaoLogin;

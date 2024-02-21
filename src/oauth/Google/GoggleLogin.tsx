@@ -1,18 +1,10 @@
-import GoogleLogo from '../../pages/Loginpage/images/googlelogin.svg';
+import * as L from '../../pages/Loginpage/styles/Login.style';
 
 const GoogleLogin = () => {
   const handleGoogleLogin = () => {
     window.location.href = `http://localhost:5173/oauth2/authorize/google`;
   };
-
-  return (
-    <img
-      src={GoogleLogo}
-      alt="카카오 로고"
-      style={{ width: '80%', cursor: 'pointer', marginBottom: '10px' }}
-      onClick={handleGoogleLogin}
-    />
-  );
+  return <L.GoogleButton onClick={handleGoogleLogin} />;
 };
 
 export default GoogleLogin;
