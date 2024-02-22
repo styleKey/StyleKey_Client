@@ -16,12 +16,12 @@ export const ImgContainer = styled.img`
 `;
 
 export const ButtonContainer = styled.div`
-  height: 165px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-top: 44px;
+  margin-top: 10px;
 `;
 
 export const SnsCaption = styled(Caption)`
@@ -30,6 +30,7 @@ export const SnsCaption = styled(Caption)`
   line-height: 150%;
   padding-bottom: 8px;
   border-bottom: 1px solid #999;
+  margin-bottom: 24px;
 `;
 
 export const LoginButton = styled.button`
@@ -40,6 +41,7 @@ export const LoginButton = styled.button`
   border: none;
   font-size: 20px;
   position: relative;
+  margin-bottom: 24px;
 `;
 
 export const KakaoButton = styled(LoginButton)`

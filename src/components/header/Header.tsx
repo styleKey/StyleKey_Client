@@ -47,7 +47,7 @@ function Header() {
               <Login />
             </>
           ) : (
-            <Login />
+            !isLoginPath && <Login /> // isAuth가 아니고, isLoginState도 아닐 때만 <Login/> 렌더링
           )}
         </He.RightSection>
       </He.NavBar>
