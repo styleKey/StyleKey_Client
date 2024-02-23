@@ -8,7 +8,7 @@ import HamburgerButtonLogo from './images/Hamburgerbutton.svg';
 import FavoriteButtonLogo from './images/FavoriteButton.svg';
 import BackButton from './images/backbutton.svg';
 import StyleKeyLogo from './images/stylekeylogo.svg';
-import { TextTitle } from '../common/Text.tsx';
+import { Text } from '../common/Common.tsx';
 
 function Header() {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ function Header() {
           )}
         </He.LeftSection>
         {isLoginPath ? (
-          <TextTitle>로그인</TextTitle>
+          <Text>로그인</Text>
         ) : (
           <He.Logo>
             <img src={StyleKeyLogo} alt="로고" />
