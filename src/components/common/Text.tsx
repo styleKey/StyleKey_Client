@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-export const TextRegular = styled.p<{
+export const Text = styled.p<{
   $marginTop?: number;
   $marginBottom?: number;
+  $marginLeft?: number;
+  $marginRight?: number;
+  $fontSize?: number;
+  $fontWeight?: number;
 }>`
-  font-size: 16px;
-  font-weight: 400;
+  font-size: ${(props) => (props.$fontSize ? props.$fontSize : 20)}px;
+  font-weight: ${(props) => (props.$fontWeight ? props.$fontWeight : 300)};
   text-align: center;
   //iphone 6/7/8 plus
   @media (max-height: 737px) {
@@ -21,19 +25,8 @@ export const TextRegular = styled.p<{
   margin-top: ${(props) => (props.$marginTop ? props.$marginTop : 0)}px;
   margin-bottom: ${(props) =>
     props.$marginBottom ? props.$marginBottom : 0}px;
-`;
-
-export const TextTitle = styled.p<{
-  $marginTop?: number;
-  $marginBottom?: number;
-}>`
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-
-  margin-top: ${(props) => (props.$marginTop ? props.$marginTop : 0)}px;
-  margin-bottom: ${(props) =>
-    props.$marginBottom ? props.$marginBottom : 0}px;
+  margin-left: ${(props) => (props.$marginLeft ? props.$marginLeft : 0)}px;
+  margin-right: ${(props) => (props.$marginRight ? props.$marginRight : 0)}px;
 `;
 
 export const Caption = styled.p<{ $color?: string }>`
