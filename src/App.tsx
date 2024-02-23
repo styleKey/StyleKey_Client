@@ -6,6 +6,7 @@ import Header from './components/header/Header.tsx';
 import Homepage from './pages/Homepage/Homepage.tsx';
 import RedirectPage from './oauth/Redirect.tsx';
 import Login from './pages/Loginpage/Login.tsx';
+import Mypage from './pages/MyPage/Mypage.tsx';
 
 const CenteredContainer = styled.div`
   max-width: 390px; // 최대 가로 길이 (피그마에 있는 대로)
@@ -28,7 +29,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
               <Route path="/login" element={<Login />}></Route>
-              <Route path="/mypage">
+              <Route path="/mypage" element={<Mypage />}>
                 <Route path="/mypage/history"></Route>
                 <Route path="/mypage/favorite"></Route>
               </Route>
