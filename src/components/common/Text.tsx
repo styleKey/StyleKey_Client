@@ -4,8 +4,8 @@ export const TextRegular = styled.p<{
   $marginTop?: number;
   $marginBottom?: number;
 }>`
-  font-size: 22px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
   //iphone 6/7/8 plus
   @media (max-height: 737px) {
@@ -37,8 +37,9 @@ export const TextTitle = styled.p<{
 `;
 
 export const Caption = styled.p<{ $color?: string }>`
-  font-size: 20px;
-  font-weight: 200;
+  margin-top: 28.5px;
+  font-size: 14px;
+  font-weight: 300;
   color: #343434;
   text-align: center;
 

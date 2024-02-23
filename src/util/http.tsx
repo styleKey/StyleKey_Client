@@ -4,7 +4,7 @@ import axiosInstance from '../api/axios';
 //임시 테스트 용 코드임
 
 export async function requestGet() {
-  const response = await axiosInstance.get('/api/test-question');
+  const response = await axiosInstance.get('/api/test-questions');
   const questions = response.data;
   return questions;
 }
