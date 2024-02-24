@@ -1,4 +1,4 @@
-import * as L from '../../pages/Loginpage/styles/Login.style';
+import * as L from '../../components/loginpage/styles/Login.style';
 import GoogleLogo from './Google.svg';
 
 const GoogleLogin = () => {
