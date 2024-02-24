@@ -6,6 +6,8 @@ import DownButton from './images/Downbutton.svg';
 import Slide from '../../components/swiper/Swiper';
 
 const Homepage: React.FC = () => {
+  const testAccessToken = localStorage.getItem('accessToken');
+  console.log('accessToken:', testAccessToken);
   const homeBottomRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {

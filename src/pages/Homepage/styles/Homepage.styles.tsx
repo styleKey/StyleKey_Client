@@ -49,6 +49,8 @@ export const TestButton = styled.button`
   border: 1px solid #000;
   background: #000;
   color: white;
+  font-size: 20px;
+  font-weight: 700;
 `;
 
 export const BlinkingImage1 = styled.img`

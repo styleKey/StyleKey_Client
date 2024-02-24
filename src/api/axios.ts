@@ -5,6 +5,12 @@ const axiosInstance = axios.create({
   withCredentials: true,
 });
 
+//refreshToken 보내고 accessToken 요청하는 로직을 axiosInstance로 할 경우 무한루프에 빠져서 새로운 axiosInstance를 생성했습니다.
+const axiosInstanceForRefresh = axios.create({
+  baseURL: 'http://localhost:9000',
+  withCredentials: true,
+});
+
 // Response Interceptor 설정 (일단은 accessToken이랑 refreshToken 때문에 response 만 생성했음)
 axiosInstance.interceptors.response.use(
   (response) => {
@@ -12,7 +18,6 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   async (error) => {
-    // 에러 처리
     const originalRequest = error.config;
     // error.config에 들어있는것들
     // url: 요청이 보내진 URL.
@@ -30,7 +35,7 @@ axiosInstance.interceptors.response.use(
         // refreshToken으로 새 accessToken 요청
         const refreshToken = localStorage.getItem('refreshToken');
         //post 엔드포인트는 나중에 백한테 받고 변경해야 됨
-        const response = await axiosInstance.post('/refresh-token', {
+        const response = await axiosInstanceForRefresh.post('/refresh-token', {
           refreshToken: refreshToken,
         });
 

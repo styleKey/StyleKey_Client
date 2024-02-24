@@ -32,10 +32,7 @@ function App() {
                 <Route path="/mypage/history"></Route>
                 <Route path="/mypage/favorite"></Route>
               </Route>
-              <Route
-                path="/oauth/callback/:provider"
-                element={<RedirectPage />}
-              />
+              <Route path="/oauth/redirect" element={<RedirectPage />} />
               <Route path="/test" />
               <Route path="/points">
                 <Route path="/points/detail">
