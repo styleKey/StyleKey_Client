@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import * as Ho from './styles/Homepage.styles';
-import { MobileLayout } from '../../components/common/Layout';
+import MobileLayout from '../../components/common/Layout';
 
 import DownButton from './images/Downbutton.svg';
 import Slide from '../../components/swiper/Swiper';

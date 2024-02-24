@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MobileLayout = styled.div`
+const MobileLayout = styled.div`
   box-sizing: border-box;
   width: 100%;
   max-width: 390px;
@@ -11,3 +11,5 @@ export const MobileLayout = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export default MobileLayout;
