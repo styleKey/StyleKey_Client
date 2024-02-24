@@ -1,7 +1,7 @@
 import MobileLayout from '../../components/common/Layout';
 import * as L from './styles/Login.style';
 import stylekeylogo from '../../pages/Loginpage/images/stylekeylogo.svg';
-import { Caption, Text } from '../../components/common/Text';
+import { Caption, Text } from '../../components/common/Common';
 
 import { requestGet } from '../../util/http';
 import { useQuery } from '@tanstack/react-query';

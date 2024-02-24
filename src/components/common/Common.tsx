@@ -47,4 +47,21 @@ export const Caption = styled.p<{ $color?: string }>`
   }
 `;
 
-// export const TextLigth =
+export const Button = styled.div<{
+  $width?: number;
+  $height?: number;
+  $fontSize?: number;
+}>`
+  width: ${(props) => (props.$width ? props.$width : 170)}px;
+  height: ${(props) => (props.$height ? props.$height : 46)}px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: ${(props) => (props.$fontSize ? props.$fontSize : 16)}px;
+  font-weight: 700;
+`;
