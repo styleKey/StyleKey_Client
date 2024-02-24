@@ -33,7 +33,6 @@ function Login() {
         <img
           src={LoginLogo}
           alt="Loged in Button"
-          onClick={logoutHandler}
           style={{ width: '26px', height: '26px' }}
         />
       ) : (

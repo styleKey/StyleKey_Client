@@ -3,10 +3,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/header/Header.tsx';
-import Homepage from './pages/Homepage/Homepage.tsx';
+import Homepage from './pages/Homepage.tsx';
 import RedirectPage from './oauth/Redirect.tsx';
-import Login from './pages/Loginpage/Login.tsx';
-import Mypage from './pages/MyPage/Mypage.tsx';
+import Login from './pages/Login.tsx';
+// import Mypage from './pages/MyPage/Mypage.tsx';
 import ResultPage from './pages/ResultPage/ResultPage.tsx';
 
 const CenteredContainer = styled.div`
@@ -30,14 +30,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
               <Route path="/login" element={<Login />}></Route>
-              <Route path="/mypage" element={<Mypage />}>
+              {/* <Route path="/mypage" element={<Mypage />}>
                 <Route path="/mypage/history"></Route>
                 <Route path="/mypage/favorite"></Route>
-              </Route>
-              <Route
-                path="/oauth/callback/:provider"
-                element={<RedirectPage />}
-              />
+              </Route> */}
+              <Route path="/oauth/redirect" element={<RedirectPage />} />
               <Route path="/test" />
               <Route path="/result" element={<ResultPage />} />
               <Route path="/points">

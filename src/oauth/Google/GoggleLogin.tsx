@@ -1,9 +1,9 @@
-import * as L from '../../pages/Loginpage/styles/Login.style';
+import * as L from '../../components/loginpage/styles/Login.style';
 import GoogleLogo from './Google.svg';
 
 const GoogleLogin = () => {
   const handleGoogleLogin = () => {
-    window.location.href = `http://localhost:5173/oauth2/authorize/google`;
+    window.location.href = `http://localhost:9000/oauth2/authorization/google?redirect_uri=http://localhost:5173/oauth/redirect`;
   };
   return (
     <L.GoogleButton onClick={handleGoogleLogin}>

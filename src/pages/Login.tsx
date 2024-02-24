@@ -1,13 +1,13 @@
-import MobileLayout from '../../components/common/Layout';
-import * as L from './styles/Login.style';
-import stylekeylogo from '../../pages/Loginpage/images/stylekeylogo.svg';
-import { Caption, Text } from '../../components/common/Common';
+import MobileLayout from '../components/common/Layout';
+import * as L from '../components/loginpage/styles/Login.style';
+import stylekeylogo from '../components/loginpage/images/stylekeylogo.svg';
+import { Caption, Text } from '../components/common/Common';
 
-import { requestGet } from '../../util/http';
+import { requestGet } from '../util/http';
 import { useQuery } from '@tanstack/react-query';
 import { Key } from 'react';
-import KakaoLogin from '../../oauth/Kakao/KakaoLogin';
-import GoogleLogin from '../../oauth/Google/GoggleLogin';
+import KakaoLogin from '../oauth/Kakao/KakaoLogin';
+import GoogleLogin from '../oauth/Google/GoggleLogin';
 
 function Login() {
   const { data } = useQuery({

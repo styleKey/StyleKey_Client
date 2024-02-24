@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
-import * as Ho from './styles/Homepage.styles';
-import MobileLayout from '../../components/common/Layout';
+import * as Ho from '../components/HomePage/styles/Homepage.styles';
+import MobileLayout from '../components/common/Layout';
 
-import DownButton from './images/Downbutton.svg';
-import Slide from '../../components/swiper/Swiper';
+import DownButton from '../components/HomePage/images/Downbutton.svg';
+import Slide from '../components/swiper/Swiper';
 
 const Homepage: React.FC = () => {
+  const testAccessToken = localStorage.getItem('accessToken');
+  console.log('accessToken:', testAccessToken);
   const homeBottomRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
