@@ -1,5 +1,4 @@
 import * as L from './styles/Login.style';
-import KakaoLogo from './images/kakaologin.svg';
 
 const KakaoLogin = () => {
   const handleKakaoLogin = () => {
@@ -9,17 +8,7 @@ const KakaoLogin = () => {
   };
 
   return (
-    <L.KakaoButton onClick={handleKakaoLogin}>
-      <img
-        src={KakaoLogo}
-        alt="카카오 로고"
-        style={{
-          position: 'absolute',
-          left: '20px',
-        }}
-      />
-      KAKAO로 로그인
-    </L.KakaoButton>
+    <L.KakaoButton onClick={handleKakaoLogin}>KAKAO로 로그인</L.KakaoButton>
   );
 };
 

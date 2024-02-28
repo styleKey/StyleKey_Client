@@ -1,10 +1,9 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import Login from './Login.tsx';
+import Login from './LoginAuth.tsx';
 import { AppState } from '../../store/index.tsx';
 import * as He from './styles/Header.styles.tsx';
-import HamburgerButtonLogo from './images/Hamburgerbutton.svg';
 import FavoriteButtonLogo from './images/FavoriteButton.svg';
 import BackButton from './images/backbutton.svg';
 import StyleKeyLogo from './images/stylekeylogo.svg';

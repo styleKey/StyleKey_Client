@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { AppState } from '../../store/index.tsx';
 import { useNavigate } from 'react-router-dom';
 /**TODO : Login 파일명 중복되어서 파일명 수정필요 */
-function Login() {
+function LoginAuth() {
   const navigate = useNavigate();
   const navigatetoLogin = () => {
     navigate('/login');
@@ -35,4 +35,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginAuth;
