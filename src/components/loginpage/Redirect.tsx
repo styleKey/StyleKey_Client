@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { authActions } from '../store/auth';
+import { authActions } from '../../store/auth';
 import { useNavigate } from 'react-router-dom';
 
 const RedirectPage = () => {

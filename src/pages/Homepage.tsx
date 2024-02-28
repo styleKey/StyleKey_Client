@@ -5,9 +5,11 @@ import MobileLayout from '../components/common/Layout';
 import DownButton from '../components/HomePage/images/Downbutton.svg';
 import Slide from '../components/swiper/Swiper';
 
+import axios from 'axios';
+
 const Homepage: React.FC = () => {
   const testAccessToken = localStorage.getItem('accessToken');
-  console.log('accessToken:', testAccessToken);
+  // console.log('accessToken:', testAccessToken);
   const homeBottomRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -23,6 +25,17 @@ const Homepage: React.FC = () => {
     }
   };
 
+  const fff = async () => {
+    const token = localStorage.getItem('accessToken');
+    const res = await axios.get('http://localhost:9000/api/test-questions', {
+      withCredentials: true,
+      // headers: {
+      //   Authorization: `Bearer ${token}`,
+      // },
+    });
+    console.log(res);
+  };
+
   return (
     <MobileLayout>
       <Ho.HomeTop>
@@ -31,7 +44,7 @@ const Homepage: React.FC = () => {
         </Ho.Container>
       </Ho.HomeTop>
       <Ho.HomeMiddle>
-        <Ho.TestButton>패션 취향 테스트 하러 가기</Ho.TestButton>
+        <Ho.TestButton onClick={fff}>패션 취향 테스트 하러 가기</Ho.TestButton>
         <Ho.BlinkingImage1
           src={DownButton}
           alt="스크롤 버튼"

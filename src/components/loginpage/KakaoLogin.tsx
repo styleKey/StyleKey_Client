@@ -1,5 +1,5 @@
-import * as L from '../../components/loginpage/styles/Login.style';
-import KakaoLogo from './Kakaotalk.svg';
+import * as L from './styles/Login.style';
+import KakaoLogo from './images/kakaologin.svg';
 
 const KakaoLogin = () => {
   const handleKakaoLogin = () => {
