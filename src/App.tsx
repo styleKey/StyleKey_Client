@@ -6,7 +6,7 @@ import Header from './components/header/Header.tsx';
 import Homepage from './pages/Homepage.tsx';
 import RedirectPage from './components/loginpage/Redirect.tsx';
 import Login from './pages/Login.tsx';
-// import Mypage from './pages/MyPage/Mypage.tsx';
+import Mypage from './pages/Mypage.tsx';
 import ResultPage from './pages/ResultPage.tsx';
 
 const CenteredContainer = styled.div`
@@ -30,10 +30,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
               <Route path="/login" element={<Login />}></Route>
-              {/* <Route path="/mypage" element={<Mypage />}>
+              <Route path="/mypage" element={<Mypage />}>
                 <Route path="/mypage/history"></Route>
                 <Route path="/mypage/favorite"></Route>
-              </Route> */}
+              </Route>
               <Route path="/oauth/redirect" element={<RedirectPage />} />
               <Route path="/test" />
               <Route path="/result" element={<ResultPage />} />
