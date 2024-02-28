@@ -5,7 +5,14 @@ import MobileLayout from '../components/common/Layout';
 import DownButton from '../components/HomePage/images/Downbutton.svg';
 import Slide from '../components/swiper/Swiper';
 
+import { useNavigate } from 'react-router-dom';
+
 const Homepage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const navigateToTestPage = () => {
+    navigate('/teststart');
+  };
   const testAccessToken = localStorage.getItem('accessToken');
   console.log('accessToken:', testAccessToken);
   const homeBottomRef = useRef<HTMLDivElement>(null);
@@ -14,7 +21,7 @@ const Homepage: React.FC = () => {
     if (homeBottomRef.current) {
       const homeBottomPosition =
         homeBottomRef.current.getBoundingClientRect().top;
-      const offsetPosition = homeBottomPosition + window.scrollY - 99;
+      const offsetPosition = homeBottomPosition + window.scrollY - 130;
 
       window.scrollTo({
         top: offsetPosition,
@@ -31,7 +38,9 @@ const Homepage: React.FC = () => {
         </Ho.Container>
       </Ho.HomeTop>
       <Ho.HomeMiddle>
-        <Ho.TestButton>패션 취향 테스트 하러 가기</Ho.TestButton>
+        <Ho.TestButton onClick={navigateToTestPage}>
+          패션 취향 테스트 하러 가기
+        </Ho.TestButton>
         <Ho.BlinkingImage1
           src={DownButton}
           alt="스크롤 버튼"

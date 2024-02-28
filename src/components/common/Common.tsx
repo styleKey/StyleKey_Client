@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { TestStartButton } from '../HomePage/styles/Homepage.styles';
 
 export const Text = styled.p<{
   $marginTop?: number;
@@ -21,7 +22,6 @@ export const Text = styled.p<{
     margin-top: 60px;
     font-size: 18px;
   }
-
   margin-top: ${(props) => (props.$marginTop ? props.$marginTop : 0)}px;
   margin-bottom: ${(props) =>
     props.$marginBottom ? props.$marginBottom : 0}px;
@@ -30,7 +30,7 @@ export const Text = styled.p<{
 `;
 
 export const Caption = styled.p<{ $color?: string }>`
-  margin-top: 28.5px;
+  margin-top: 26px;
   font-size: 14px;
   font-weight: 300;
   color: #343434;
@@ -64,4 +64,29 @@ export const Button = styled.div<{
   color: #fff;
   font-size: ${(props) => (props.$fontSize ? props.$fontSize : 16)}px;
   font-weight: 700;
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+interface FadeInTextProps {
+  delay: string;
+}
+
+export const FadeInText = styled(Text)<FadeInTextProps>`
+  animation: ${fadeIn} 1s ease-in forwards;
+  animation-delay: ${(props) => props.delay || '0s'};
+  opacity: 0;
+`;
+
+export const FadeInButton = styled(TestStartButton)<FadeInTextProps>`
+  animation: ${fadeIn} 1s ease-in forwards;
+  animation-delay: ${(props) => props.delay || '0s'};
+  opacity: 0;
 `;
