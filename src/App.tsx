@@ -7,7 +7,7 @@ import Homepage from './pages/Homepage.tsx';
 import RedirectPage from './components/loginpage/Redirect.tsx';
 import Login from './pages/Login.tsx';
 // import Mypage from './pages/MyPage/Mypage.tsx';
-import ResultPage from './pages/ResultPage/ResultPage.tsx';
+import ResultPage from './pages/ResultPage.tsx';
 
 const CenteredContainer = styled.div`
   max-width: 390px; // 최대 가로 길이 (피그마에 있는 대로)

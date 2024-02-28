@@ -1,14 +1,14 @@
 import React from 'react';
-import * as R from './ResultPage.style';
+import * as R from '../components/ResultPage/styles/ResultPage.style';
 
-import MobileLayout from '../../components/common/Layout';
-import { Button, Text } from '../../components/common/Common';
+import MobileLayout from '../components/common/Layout';
+import { Text } from '../components/common/Common';
 
-import Description from '../../components/ResultPage/Description';
-import MoreBox from '../../components/ResultPage/MoreBox';
+import Description from '../components/ResultPage/Description';
+import MoreBox from '../components/ResultPage/MoreBox';
 
-import link_img from '../../images/link.svg';
-import retry_img from '../../images/update.svg';
+import link_img from '../components/ResultPage/images/link.svg';
+import retry_img from '../components/ResultPage/images/update.svg';
 
 function ResultPage() {
   return (
