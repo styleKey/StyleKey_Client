@@ -1,5 +1,5 @@
 import React from 'react';
-import * as R from '../../pages/ResultPage/ResultPage.style';
+import * as R from './styles/ResultPage.style';
 
 function Description() {
   return (
