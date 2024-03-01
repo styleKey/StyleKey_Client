@@ -25,44 +25,7 @@
 
 ### 1. 소셜 로그인 (구글/카카오)
 - axiosInterceptor가 accessToken이 만료되었을 때 401오류를 클라이언트 단에서 가로채어 <br> refreshToken을 통해 accessToken을 최신화 하는 로직을 작성하였습니다.
-```js
-axiosInstance.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  async (error) => {
-    const originalRequest = error.config;
 
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-
-      try {
-        const refreshToken = localStorage.getItem('refreshToken');
-        const response = await axiosInstanceForRefresh.post('/refresh-token', {
-          refreshToken: refreshToken,
-        });
-
-        const { accessToken } = response.data;
-
-        localStorage.setItem('accessToken', accessToken);
-
-        axiosInstance.defaults.headers.common[
-          'Authorization'
-        ] = `Bearer ${accessToken}`;
-        originalRequest.headers['Authorization'] = `Bearer ${accessToken}`;
-
-        return axiosInstance(originalRequest);
-      } catch (err) {
-        console.error('Error during token refresh:', err);
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
-        return Promise.reject(err);
-      }
-    }
-    return Promise.reject(error);
-  },
-);
-```
 ### 2. 홈페이지 이미지 슬라이더 및 자동 스크롤
 <table>
   <tr>
