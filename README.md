@@ -33,7 +33,7 @@
       <img src="https://github.com/styleKey/StyleKey_Client/assets/116702892/540240b7-e4cc-49c8-b788-822d06ecb963/" width="200" height="400">
     </td>
     <td>
-      - 이미지 슬라이더에는 swiper 라이브러리를 사용하여<br> 3D 느낌이 나는 슬라이더를 구현했습니다.
+      - 이미지 슬라이더에는 swiper 라이브러리를 사용하여<br> 3D 슬라이더를 구현했습니다.
       <br>
       <br>
       - 하단 버튼은 사용자가 스크롤 하지 않아도 <br>클릭만으로 페이지 이동이 가능하게 구현했습니다.
