@@ -7,7 +7,6 @@ const MobileLayout = styled.div`
   min-width: 320px;
   margin: 0 auto;
   padding: 130px 16px 32px 16px;
-
   display: flex;
   flex-direction: column;
 `;

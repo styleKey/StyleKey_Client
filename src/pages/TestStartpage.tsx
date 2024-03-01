@@ -3,11 +3,13 @@ import * as L from '../components/loginpage/styles/Login.style';
 import stylekeylogo from '../components/loginpage/images/stylekeylogo.svg';
 import { useNavigate } from 'react-router-dom';
 import { FadeInText, FadeInButton } from '../components/common/Common';
+import useGetTest from '../components/TestPage/hooks/useGetTest';
 
 function TestStartPage() {
+  useGetTest();
   const navigate = useNavigate();
   const navigatetoTest = () => {
-    navigate('/');
+    navigate('/test');
   };
   return (
     <MobileLayout>

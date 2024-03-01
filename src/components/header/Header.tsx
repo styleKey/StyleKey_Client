@@ -15,11 +15,13 @@ function Header() {
   const location = useLocation();
   const isLoginPath = location.pathname === '/login';
   const isTestPage = location.pathname === '/teststart';
+  const isTestPath = location.pathname === '/test';
+  const isResultPath = location.pathname === '/result';
 
   function headerMain() {
     if (isLoginPath) {
       return <Text style={{ margin: 'auto' }}>로그인</Text>;
-    } else if (isTestPage) {
+    } else if (isTestPage || isTestPath) {
       return <Text $fontWeight={500}>패션 성향 테스트</Text>; // TestPath에 대한 텍스트
     } else {
       return (
@@ -35,24 +37,67 @@ function Header() {
       <He.NavBar2></He.NavBar2>
       <He.NavBar>
         <He.LeftSection>
-          {isLoginPath || isTestPage ? (
-            <He.HeaderButtons onClick={() => navigate(-1)}>
-              <img src={BackButton} alt="뒤로가기 버튼" />
-            </He.HeaderButtons>
-          ) : (
-            <He.HeaderButtons>
-              {/* <img src={HamburgerButtonLogo} alt="Hamburger Button" /> */}
-            </He.HeaderButtons>
-          )}
+          {(() => {
+            switch (true) {
+              case isResultPath:
+                return (
+                  <He.HeaderButtons onClick={() => navigate(-1)}>
+                    <img src={BackButton} alt="뒤로가기 버튼" />
+                  </He.HeaderButtons>
+                );
+              case isTestPage:
+                return (
+                  <He.HeaderButtons onClick={() => navigate(-1)}>
+                    <img src={BackButton} alt="뒤로가기 버튼" />
+                  </He.HeaderButtons>
+                );
+              case isTestPath:
+                return (
+                  <He.HeaderButtons onClick={() => navigate(-1)}>
+                    <img src={BackButton} alt="뒤로가기 버튼" />
+                  </He.HeaderButtons>
+                );
+              case isLoginPath:
+                return (
+                  <He.HeaderButtons onClick={() => navigate(-1)}>
+                    <img src={BackButton} alt="뒤로가기 버튼" />
+                  </He.HeaderButtons>
+                );
+              default:
+                return <He.HeaderButtons></He.HeaderButtons>;
+            }
+          })()}
         </He.LeftSection>
         {headerMain()}
         <He.RightSection>
           {isAuth ? (
             <>
-              <He.HeaderButtons>
-                <img src={FavoriteButtonLogo} alt="Favorite Button" />
-              </He.HeaderButtons>
-              <Login />
+              {(() => {
+                switch (true) {
+                  case isTestPage:
+                    return <></>;
+                  case isTestPath:
+                    return <></>;
+                  case isLoginPath:
+                    return (
+                      <>
+                        <He.HeaderButtons>
+                          <img src={FavoriteButtonLogo} alt="Favorite Button" />
+                        </He.HeaderButtons>
+                        <Login />
+                      </>
+                    );
+                  default:
+                    return (
+                      <>
+                        <He.HeaderButtons>
+                          <img src={FavoriteButtonLogo} alt="Favorite Button" />
+                        </He.HeaderButtons>
+                        <Login />
+                      </>
+                    );
+                }
+              })()}
             </>
           ) : (
             !isLoginPath && <Login /> // isAuth가 아니고, isLoginState도 아닐 때만 <Login/> 렌더링

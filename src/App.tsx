@@ -9,6 +9,7 @@ import Login from './pages/Login.tsx';
 import Mypage from './pages/Mypage.tsx';
 import ResultPage from './pages/ResultPage.tsx';
 import TestStartPage from './pages/TestStartpage.tsx';
+import TestPage from './pages/TestPage.tsx';
 
 const CenteredContainer = styled.div`
   max-width: 390px; // 최대 가로 길이 (피그마에 있는 대로)
@@ -37,6 +38,7 @@ function App() {
               </Route>
               <Route path="/oauth/redirect" element={<RedirectPage />} />
               <Route path="/teststart" element={<TestStartPage />} />
+              <Route path="/test" element={<TestPage />} />
               <Route path="/test" />
               <Route path="/result" element={<ResultPage />} />
               <Route path="/points">
