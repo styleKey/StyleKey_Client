@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { TestStartButton } from '../HomePage/styles/Homepage.styles';
-
 export const Text = styled.p<{
   $marginTop?: number;
   $marginBottom?: number;

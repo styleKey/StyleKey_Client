@@ -7,6 +7,7 @@ import { Text } from '../common/Common';
 import { useNavigate } from 'react-router-dom';
 
 export default function TestBox() {
+  const [showQuestion, setShowQuestion] = useState(true);
   const navigate = useNavigate();
   const {
     data: questions,
@@ -47,12 +48,16 @@ export default function TestBox() {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
     setSelectedAnswers(updatedAnswers);
+    setShowQuestion(false);
 
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else {
-      navigate('/result');
-    }
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      } else {
+        navigate('/result');
+      }
+      setShowQuestion(true);
+    }, 500);
   };
 
   const goToPreviousQuestion = () => {
@@ -93,6 +98,7 @@ export default function TestBox() {
               selected={
                 selectedAnswers[currentQuestionIndex] === answer.answer_id
               }
+              show={showQuestion}
             >
               {answer.content}
             </T.SelectButton>
