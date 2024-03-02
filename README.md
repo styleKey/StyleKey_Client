@@ -1,93 +1,69 @@
-# StyleKey
-
-<p align="center">
-  <br>
-  <img src="./images/common/logo-sample.jpeg">
-  <br>
-</p>
-
-## :closed_book:목차
-
-[1.프로젝트 소개](#프로젝트-소개)
-
-[2.기술 스택](#기술-스택)
-
-[3.구현 기능](#구현-기능)
-
-[4.Trouble Shooting](#Trouble-Shooting)
+## 📖 목차
+### 1. 프론트엔드 개발 목표
+### 2. 기술 스택
+### 3. 구현 기능
+### 4. 최적화
+### 5. Trouble Shooting
 
 <br>
 
-## 프로젝트 소개
+## 🚀 프론트엔드 개발 목표
 
-<p align="justify">
-프로젝트 개요/동기
-</p>
+### 1. 사용자의 UI/UX 경험 극대화 (반응형 UI / 기억에 남는 UX)
+### 2. 상태관리 (클라이언트에는 Redux를, 서버와는 Tanstack을)
+<br>
 
-<p align="center">
-GIF Images
-</p>
+## 📚 기술 스택
+
+![icons8-typescript-96](https://github.com/styleKey/StyleKey_Client/assets/116702892/37528348-e3dd-4b25-8924-9ddbbfe84dd9) 타입스크립트
+
+![icons8-react-a-javascript-library-for-building-user-interfaces-96](https://github.com/styleKey/StyleKey_Client/assets/116702892/64e01064-e02e-4365-a060-4cfc5a13f3da) 리액트
 
 <br>
 
-## 기술 스택
+## 🖥 구현 기능
 
-| JavaScript | TypeScript |  React   |
-| :--------: | :--------: | :------: |
-|   ![js]    |   ![ts]    | ![react] |
+### 1. 소셜 로그인 (구글/카카오)
+- axiosInterceptor가 accessToken이 만료되었을 때 401오류를 클라이언트 단에서 가로채어 <br> refreshToken을 통해 accessToken을 최신화 하는 로직을 작성하였습니다.
 
-<br>
+### 2. 홈페이지 이미지 슬라이더 및 자동 스크롤
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/styleKey/StyleKey_Client/assets/116702892/540240b7-e4cc-49c8-b788-822d06ecb963/" width="200" height="400">
+    </td>
+    <td>
+      - 이미지 슬라이더에는 swiper 라이브러리를 사용하여<br> 3D 슬라이더를 구현했습니다.
+      <br>
+      <br>
+      - 하단 버튼은 사용자가 스크롤 하지 않아도 <br>클릭만으로 페이지 이동이 가능하게 구현했습니다.
+    </td>
+  </tr>
+</table>
 
-## 구현 기능
-
-### 기능 1
-- 로그인 기능
-  - 인증 상태의 경우, 사용자가 로그인 했는지의 여부에 대한 답은 여러 컴포넌트와 관련이 있기 때문에 redux를 사용하였다.
-  - 로그인 전 (테스트 실행, 테스트 결과 확인 (스타일포인트 설명만))
-  - 로그인 후 (테스트 결과 저장, 해당 스타일포인트에 대한 코디룩, 아이템 추천 확인)
-    
- 
-
-### 기능 2
-
-### 기능 3
-
-### 기능 4
+### 3. 추가예정
 
 <br>
 
-## Trouble Shooting
-
-### CSS 관련
-
-<p align="justify">
-
-- 컴포넌트가 3개 있다면, 토스처럼 컴포넌트 2개는 항상 유저가 확인하고 나머지 컴포넌트는 스크롤해서 볼 수 있는 방법을 몰랐다.
-  그래서 일단은 viewport를 생각해서 컴포넌트 2개의 vh를 기기별로 확인하면서 맞춰봤는데, 아이폰 4같은 기종에서는 화면이 뭉개지는 현상이 있다.
+## ⚡️ 최적화
+### 1. Tanstack 쿼리
+- Tanstack 쿼리의 캐시 저장 장점을 활용하여 서버 과부화를 방지하였습니다.
+- 처음 데이터를 받아온 후 10분 동안 동일한 요청에 대해서는 캐시에 저장된 데이터를 쓰게 됩니다.
+- 질문지와 선택지가 유동적으로 바뀌지 않기 때문에 staleTime과 gcTime을 10분으로 설정하였습니다.
   
   ```js
-  export const HomeTop = styled.div`
-  background-color: red;
-  display: flex;
-  align-items: center;
-  height: 65vh;
-  `
-
-</p>
-
-- 토스 온보딩 페이지
-![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/f2ec7a45-8ce9-4039-bfe4-5aae22662a73)
-
-- 스크롤 하기 전 화면
-![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/ebc14bef-06bd-4477-bfce-253fa1221ceb)
-
-- 스크롤 하고 난 화면
-![image](https://github.com/styleKey/StyleKey_Client/assets/116702892/887ac21b-b212-48cd-9275-701a9d1f8825)
+  const queryResult = useQuery({
+    queryKey: ['testinfo'],
+    queryFn: requestGet,
+    staleTime: 600000, //테스트 문제 받아오는 건 처음만 받아오고 10분 동안은 안 받아오게 설정
+    gcTime: 600000, //캐시에도 10분동안 남아있도록 설정
+  });
+  return queryResult;
+  ```
 
 <br>
 
-<!-- Stack Icon Refernces -->
+## 📝 Trouble Shooting
 
-[js]: ./src/images/stack/javascript.svg
-[ts]: ./src/images/stack/typescript.svg
-[react]: ./src/images/stack/react.svg
+<br>
+
