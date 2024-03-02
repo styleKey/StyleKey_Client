@@ -7,8 +7,8 @@ import { Text } from '../common/Common';
 import { useNavigate } from 'react-router-dom';
 
 export default function TestBox() {
-  const [showQuestion, setShowQuestion] = useState(true);
   const navigate = useNavigate();
+
   const {
     data: questions,
     isLoading,
@@ -16,9 +16,11 @@ export default function TestBox() {
     isFetched,
     isStale,
   } = useGetTest();
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const [showQuestion, setShowQuestion] = useState(true);
 
   useEffect(() => {
     if (questions && questions.length > 0) {
@@ -37,13 +39,16 @@ export default function TestBox() {
   if (isError) {
     return <div>Error loading questions. Please try again later.</div>;
   }
+
   const currentQuestion = questions[currentQuestionIndex] || {
     content: '',
     answers: [],
   };
+
   const progress = questions
     ? (currentQuestionIndex / (questions.length - 1)) * 100
     : 0;
+
   const handleSelectAnswer = (answerId: number) => {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
