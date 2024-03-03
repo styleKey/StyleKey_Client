@@ -22,7 +22,7 @@ function Header() {
     if (isLoginPath) {
       return <Text style={{ margin: 'auto' }}>로그인</Text>;
     } else if (isTestPage || isTestPath) {
-      return <Text $fontWeight={500}>패션 성향 테스트</Text>; // TestPath에 대한 텍스트
+      return <Text $fontWeight={500}>패션 유형 테스트</Text>; // TestPath에 대한 텍스트
     } else {
       return (
         <He.Logo>

@@ -16,9 +16,9 @@ export const ImgContainer = styled.img`
 `;
 
 export const ImgContainer2 = styled.img`
-  width: 108px;
-  height: 142px;
-  margin: 120px auto 60px;
+  width: 146px;
+  height: 192px;
+  margin: 100px auto 60px;
 `;
 
 export const ButtonContainer = styled.div`

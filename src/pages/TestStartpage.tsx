@@ -14,23 +14,13 @@ function TestStartPage() {
   return (
     <MobileLayout>
       <L.ImgContainer2 src={stylekeylogo} alt="logo" />
-      <FadeInText
-        delay="0s"
-        $marginBottom={30}
-        $fontSize={16}
-        $fontWeight={400}
-      >
+      <FadeInText delay="0s" $marginBottom={30} $fontWeight={400}>
         나는 무슨 유형일까?
       </FadeInText>
-      <FadeInText
-        delay="1s"
-        $marginBottom={30}
-        $fontSize={16}
-        $fontWeight={400}
-      >
+      <FadeInText delay="1s" $marginBottom={30} $fontWeight={400}>
         어렵기만한 패션의 세계,
       </FadeInText>
-      <FadeInText delay="2s" $fontSize={16} $fontWeight={400}>
+      <FadeInText delay="2s" $fontWeight={400}>
         나만의 스타일을 찾아주는 스타일키!
       </FadeInText>
       <FadeInButton delay="3s" onClick={navigatetoTest}>
