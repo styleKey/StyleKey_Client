@@ -27,21 +27,8 @@ export const KeyTypo = styled.div`
   font-weight: 700;
   line-height: normal;
 
-  & > div {
-    display: inline-flex;
-    position: relative;
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: -1;
-      width: 115%;
-      height: 16px;
-      background-color: #d9d9d9;
-    }
+  & > span {
+    box-shadow: inset 0 -0.9rem #d9d9d9;
   }
 `;
 
@@ -53,20 +40,7 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Title = styled(Text)`
-  position: relative;
-  z-index: 2;
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-    width: 105%;
-    height: 16px;
-    background-color: #d9d9d9;
-  }
+  box-shadow: inset 0 -0.65rem #d9d9d9;
 `;
 
 export const Line = styled.div`
