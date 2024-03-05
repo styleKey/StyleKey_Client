@@ -19,7 +19,7 @@ function ResultPage() {
         </Text>
         <R.KeyTypo>
           변화에 민감하고 <br /> 개성을 추구하는{'   '}
-          <div>유니크</div>
+          <span>유니크</span>
         </R.KeyTypo>
         <Text $fontSize={12} $fontWeight={400} $marginTop={5}>
           전체 패션 포인트 중 83%의 유니크 포인트가 나왔어요!{' '}
