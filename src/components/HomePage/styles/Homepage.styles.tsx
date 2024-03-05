@@ -15,7 +15,7 @@ export const Homepage = styled.div`
 
 export const HomeTop = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: space-around;
   height: 58vh;
 `;
 
@@ -44,13 +44,25 @@ export const TestButton = styled.button`
   height: 25%;
   border-radius: 10px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 10px;
   border-radius: 12px;
   border: 1px solid #000;
   background: #000;
   color: white;
   font-size: 20px;
   font-weight: 700;
+`;
+
+export const TestStartButton = styled.button`
+  width: 288px;
+  height: 68px;
+  border-radius: 12px;
+  border: 1px solid #000;
+  background: #000;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 70px auto 24px;
 `;
 
 export const BlinkingImage1 = styled.img`

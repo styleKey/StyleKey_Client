@@ -1,39 +1,33 @@
 import React, { useRef } from 'react';
-import * as Ho from '../components/Homepage/styles/Homepage.styles';
+import * as Ho from '../components/HomePage/styles/Homepage.styles';
 import MobileLayout from '../components/common/Layout';
 
 import DownButton from '../components/HomePage/images/Downbutton.svg';
 import Slide from '../components/swiper/Swiper';
 
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Homepage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const navigateToTestPage = () => {
+    navigate('/teststart');
+  };
   const testAccessToken = localStorage.getItem('accessToken');
-  // console.log('accessToken:', testAccessToken);
+  console.log('accessToken:', testAccessToken);
   const homeBottomRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     if (homeBottomRef.current) {
       const homeBottomPosition =
         homeBottomRef.current.getBoundingClientRect().top;
-      const offsetPosition = homeBottomPosition + window.scrollY - 99;
+      const offsetPosition = homeBottomPosition + window.scrollY - 130;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth',
       });
     }
-  };
-
-  const fff = async () => {
-    const token = localStorage.getItem('accessToken');
-    const res = await axios.get('http://localhost:9000/api/test-questions', {
-      withCredentials: true,
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      // },
-    });
-    console.log(res);
   };
 
   return (
@@ -44,7 +38,9 @@ const Homepage: React.FC = () => {
         </Ho.Container>
       </Ho.HomeTop>
       <Ho.HomeMiddle>
-        <Ho.TestButton onClick={fff}>패션 취향 테스트 하러 가기</Ho.TestButton>
+        <Ho.TestButton onClick={navigateToTestPage}>
+          패션 취향 테스트 하러 가기
+        </Ho.TestButton>
         <Ho.BlinkingImage1
           src={DownButton}
           alt="스크롤 버튼"

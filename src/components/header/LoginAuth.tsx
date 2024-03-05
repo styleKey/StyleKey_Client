@@ -1,31 +1,17 @@
 import NLoginLogo from './images/NLoginButton.svg';
 import LoginLogo from './images/LoginButton.svg';
 import { HeaderButtons } from './styles/Header.styles.tsx';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AppState } from '../../store/index.tsx';
-import { authActions } from '../../store/auth.tsx';
 import { useNavigate } from 'react-router-dom';
 /**TODO : Login 파일명 중복되어서 파일명 수정필요 */
-function Login() {
+function LoginAuth() {
   const navigate = useNavigate();
   const navigatetoLogin = () => {
     navigate('/login');
   };
 
   const isAuth = useSelector((state: AppState) => state.auth.isAuthenticated);
-  const dispatch = useDispatch();
-
-  //로그인 핸들러는 로그인 페이지에서 로그인하면 작동되게 만들어야 함.
-  // const loginHandler = (event: React.MouseEvent<HTMLImageElement>) => {
-  //   event.preventDefault();
-  //   dispatch(authActions.login());
-  // };
-
-  const logoutHandler = (event: React.MouseEvent<HTMLImageElement>) => {
-    event.preventDefault();
-
-    dispatch(authActions.logout());
-  };
 
   return (
     <HeaderButtons>
@@ -49,4 +35,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginAuth;

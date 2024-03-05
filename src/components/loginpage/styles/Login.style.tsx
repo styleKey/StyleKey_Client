@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Caption } from '../../../components/common/Common';
 
 export const ImgContainer = styled.img`
-  height: 174px;
+  height: 143.5px;
   margin-top: 70px;
   margin-bottom: 8px;
   //iphone 6/7/8 plus
@@ -13,6 +13,12 @@ export const ImgContainer = styled.img`
   @media (max-height: 668px) {
     height: 130px;
   }
+`;
+
+export const ImgContainer2 = styled.img`
+  width: 146px;
+  height: 192px;
+  margin: 100px auto 60px;
 `;
 
 export const ButtonContainer = styled.div`
