@@ -32,11 +32,13 @@ export const TestNumberText = styled.div`
 export const TestTextBox = styled.div`
   background-color: #f0f0f0;
   width: 100%;
-  padding: 66px 27px;
+  padding: 66px 20px 66px 20px;
+  word-break: keep-all;
   text-align: center;
   margin-bottom: 24px;
-  word-break: break-all;
-
+  word-break: keep-all;
+  font-size: 20px;
+  font-weight: 400;
   border-radius: 12px;
   border: 2px solid var(--Foundation-Grey-Darker, #363636);
   background: var(--White, #fff);
@@ -49,8 +51,10 @@ export const SelectButton = styled(Button).withConfig({
   shouldForwardProp: (prop) => !['show'].includes(prop),
 })<SelectButtonProps>`
   border-radius: 12px;
+  text-align: center;
   width: 100%;
-  padding: 16px 20px;
+
+  word-break: keep-all;
   margin-bottom: 16px;
   color: black;
   font-size: 16px;
