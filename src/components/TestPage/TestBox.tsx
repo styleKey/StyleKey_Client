@@ -5,39 +5,40 @@ import { ProgressBar } from './ProgressBar';
 import useGetTest from './hooks/useGetTest';
 import { Text } from '../common/Common';
 import { useNavigate } from 'react-router-dom';
+import NextButton from './images/Next.svg';
+import PrevButton from './images/Prev.svg';
 
 export default function TestBox() {
   const navigate = useNavigate();
 
-  const {
-    data: questions,
-    isLoading,
-    isError,
-    isFetched,
-    isStale,
-  } = useGetTest();
+  const { data: questions, isLoading, isError } = useGetTest();
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [showQuestion, setShowQuestion] = useState(true);
 
+  //사용자가 직접 /test 입력하고 들어오는 경우 대비 코드
   useEffect(() => {
     if (questions && questions.length > 0) {
       setIsDataLoaded(true);
     }
   }, [questions]);
 
-  if (isFetched) {
-    console.log('데이터가 캐시에서 가져온 것인지:', !isStale);
-  }
+  //이미지 미리 한 문제 뒤까지 받아오는 코드 (캐싱)
+  useEffect(() => {
+    if (questions && currentQuestionIndex < questions.length - 1) {
+      const nextQuestionImage = new Image();
+      nextQuestionImage.src = questions[currentQuestionIndex + 1].image_url;
+    }
+  }, [currentQuestionIndex, questions]);
 
   if (isLoading || !isDataLoaded) {
     return <div>Loading...</div>;
   }
 
   if (isError) {
-    return <div>Error loading questions. Please try again later.</div>;
+    return <div>질문지를 불러오는데 에러가 발생했습니다.</div>;
   }
 
   const currentQuestion = questions[currentQuestionIndex] || {
@@ -52,17 +53,19 @@ export default function TestBox() {
   const handleSelectAnswer = (answerId: number) => {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
-    setSelectedAnswers(updatedAnswers);
-    setShowQuestion(false);
 
-    setTimeout(() => {
-      if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < questions.length - 1) {
+      setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
+
+      setTimeout(() => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
-      } else {
-        navigate('/result');
-      }
-      setShowQuestion(true);
-    }, 500);
+        setShowQuestion(true);
+      }, 500);
+    } else {
+      console.log(updatedAnswers);
+      navigate('/result');
+    }
   };
 
   const goToPreviousQuestion = () => {
@@ -94,7 +97,34 @@ export default function TestBox() {
             <div></div>
           </ProgressBar>
         </T.TestNumber>
-        <T.TestTextBox>{currentQuestion.content}</T.TestTextBox>
+        <T.TestTextBox>
+          <img
+            src={PrevButton}
+            alt="이전"
+            onClick={goToPreviousQuestion}
+            style={{
+              opacity: currentQuestionIndex === 0 ? 0 : 1,
+              pointerEvents: currentQuestionIndex === 0 ? 'none' : 'auto',
+            }}
+          />
+          <T.TestContent>
+            <T.TestPictureBox>
+              <img src={currentQuestion.image_url} alt="테스트 질문 이미지" />
+            </T.TestPictureBox>
+            {currentQuestion.content}
+          </T.TestContent>
+
+          <img
+            src={NextButton}
+            alt="다음"
+            onClick={goToNextQuestion}
+            style={{
+              opacity: currentQuestionIndex === questions.length - 1 ? 0 : 1,
+              pointerEvents:
+                currentQuestionIndex === questions.length - 1 ? 'none' : 'auto',
+            }}
+          />
+        </T.TestTextBox>
         {currentQuestion.answers.map(
           (answer: { content: string; answer_id: number }) => (
             <T.SelectButton
@@ -109,20 +139,6 @@ export default function TestBox() {
             </T.SelectButton>
           ),
         )}
-        <div>
-          <button
-            onClick={goToPreviousQuestion}
-            disabled={currentQuestionIndex === 0}
-          >
-            이전
-          </button>
-          <button
-            onClick={goToNextQuestion}
-            disabled={currentQuestionIndex === questions.length - 1}
-          >
-            다음
-          </button>
-        </div>
       </T.TestBody>
     </MobileLayout>
   );
