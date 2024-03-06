@@ -63,8 +63,13 @@ export default function TestBox() {
         setShowQuestion(true);
       }, 500);
     } else {
-      console.log(updatedAnswers);
-      navigate('/result');
+      setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
+
+      setTimeout(() => {
+        console.log(updatedAnswers);
+        navigate('/result');
+      }, 500);
     }
   };
 
