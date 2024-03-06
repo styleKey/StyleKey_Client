@@ -60,7 +60,17 @@
   });
   return queryResult;
   ```
-
+- 이미지가 텍스트 보다 느리게 렌더링 되는 문제는 이미지를 미리 캐시에 저장하는 방식으로 해결하였습니다.
+  
+  ```js
+   useEffect(() => {
+    if (questions && currentQuestionIndex < questions.length - 1) { //현재 문제의 뒷 문제의 이미지를 미리 캐싱
+      const nextQuestionImage = new Image();
+      nextQuestionImage.src = questions[currentQuestionIndex + 1].image_url;
+    }
+  }, [currentQuestionIndex, questions]);
+  ```
+  
 ### 2. 좋아요 기능
 - 사용자가 여러번 좋아요를 클릭할 경우, 서버에 계속된 요청으로 과부하를 일으킬 수 있습니다.<br>따라서 해당 문제는 사용자가 페이지를 벗어날 때만 백엔드에 요청을 보내는 식으로 해결하였습니다.
 
