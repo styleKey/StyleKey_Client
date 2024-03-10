@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:9000',
+  baseURL: 'http://13.125.106.125',
   withCredentials: true,
 });
 
 //refreshToken 보내고 accessToken 요청하는 로직을 axiosInstance로 할 경우 무한루프에 빠져서 새로운 axiosInstance를 생성했습니다.
 const axiosInstanceForRefresh = axios.create({
-  baseURL: 'http://localhost:9000',
+  baseURL: 'http://13.125.106.125',
   withCredentials: true,
 });
 

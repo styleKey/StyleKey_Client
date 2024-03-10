@@ -12,6 +12,7 @@ export default function TestBox() {
   const navigate = useNavigate();
 
   const { data: questions, isLoading, isError } = useGetTest();
+  console.log('hello');
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
