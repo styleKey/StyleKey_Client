@@ -33,6 +33,7 @@ export const TestContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 export const TestTextBox = styled.div`
@@ -41,10 +42,8 @@ export const TestTextBox = styled.div`
   flex-direction: row;
   width: 100%;
   padding: 20px 0px;
-  word-break: keep-all;
   text-align: center;
   margin-bottom: 24px;
-  word-break: keep-all;
   align-items: center;
   font-size: 16px;
   font-weight: 400;
@@ -65,11 +64,11 @@ interface SelectButtonProps {
 export const SelectButton = styled(Button).withConfig({
   shouldForwardProp: (prop) => !['show'].includes(prop),
 })<SelectButtonProps>`
+  display: flex;
+  flex-direction: row;
   border-radius: 12px;
   text-align: center;
   width: 100%;
-
-  word-break: keep-all;
   margin-bottom: 16px;
   color: black;
   font-size: 16px;
