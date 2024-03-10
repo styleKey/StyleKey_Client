@@ -5,3 +5,9 @@ export async function requestGet() {
   const questions = response.data;
   return questions;
 }
+
+export async function getStyleImages() {
+  const response = await axiosInstance.get('/api/style-points');
+  const images = response.data;
+  return images;
+}

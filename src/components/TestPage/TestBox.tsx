@@ -5,64 +5,85 @@ import { ProgressBar } from './ProgressBar';
 import useGetTest from './hooks/useGetTest';
 import { Text } from '../common/Common';
 import { useNavigate } from 'react-router-dom';
+import NextButton from './images/Next.svg';
+import PrevButton from './images/Prev.svg';
+import React from 'react';
 
 export default function TestBox() {
   const navigate = useNavigate();
 
-  const {
-    data: questions,
-    isLoading,
-    isError,
-    isFetched,
-    isStale,
-  } = useGetTest();
+  // 개행 문자를 처리하는 함수
+  function formatContent(content: string) {
+    return content.split('\\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  }
 
+  const { data: responseData, isLoading, isError } = useGetTest();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [showQuestion, setShowQuestion] = useState(true);
 
   useEffect(() => {
-    if (questions && questions.length > 0) {
+    if (responseData && responseData.data && responseData.data.length > 0) {
       setIsDataLoaded(true);
     }
-  }, [questions]);
+  }, [responseData]);
 
-  if (isFetched) {
-    console.log('데이터가 캐시에서 가져온 것인지:', !isStale);
-  }
+  useEffect(() => {
+    if (
+      responseData &&
+      responseData.data &&
+      currentQuestionIndex < responseData.data.length - 1
+    ) {
+      const nextQuestionImage = new Image();
+      nextQuestionImage.src =
+        responseData.data[currentQuestionIndex + 1].image_url;
+    }
+  }, [currentQuestionIndex, responseData]);
 
   if (isLoading || !isDataLoaded) {
     return <div>Loading...</div>;
   }
 
   if (isError) {
-    return <div>Error loading questions. Please try again later.</div>;
+    return <div>질문지를 불러오는데 에러가 발생했습니다.</div>;
   }
 
-  const currentQuestion = questions[currentQuestionIndex] || {
+  const currentQuestion = responseData.data[currentQuestionIndex] || {
     content: '',
     answers: [],
   };
 
-  const progress = questions
-    ? (currentQuestionIndex / (questions.length - 1)) * 100
+  const progress = responseData.data
+    ? (currentQuestionIndex / (responseData.data.length - 1)) * 100
     : 0;
 
   const handleSelectAnswer = (answerId: number) => {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
-    setSelectedAnswers(updatedAnswers);
-    setShowQuestion(false);
 
-    setTimeout(() => {
-      if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < responseData.data.length - 1) {
+      setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
+
+      setTimeout(() => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
-      } else {
+        setShowQuestion(true);
+      }, 500);
+    } else {
+      setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
+
+      setTimeout(() => {
+        console.log(updatedAnswers);
         navigate('/result');
-      }
-      setShowQuestion(true);
-    }, 500);
+      }, 500);
+    }
   };
 
   const goToPreviousQuestion = () => {
@@ -72,7 +93,7 @@ export default function TestBox() {
   };
 
   const goToNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < responseData.data.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
@@ -86,7 +107,7 @@ export default function TestBox() {
               Q{currentQuestionIndex + 1}
             </Text>
             <Text $fontSize={12} $fontWeight={400}>
-              {currentQuestionIndex + 1}/{questions.length}
+              {currentQuestionIndex + 1}/{responseData.data.length}
             </Text>
           </T.TestNumberText>
 
@@ -94,7 +115,37 @@ export default function TestBox() {
             <div></div>
           </ProgressBar>
         </T.TestNumber>
-        <T.TestTextBox>{currentQuestion.content}</T.TestTextBox>
+        <T.TestTextBox>
+          <img
+            src={PrevButton}
+            alt="이전"
+            onClick={goToPreviousQuestion}
+            style={{
+              opacity: currentQuestionIndex === 0 ? 0 : 1,
+              pointerEvents: currentQuestionIndex === 0 ? 'none' : 'auto',
+            }}
+          />
+          <T.TestContent>
+            <T.TestPictureBox>
+              <img src={currentQuestion.image_url} alt="테스트 질문 이미지" />
+            </T.TestPictureBox>
+            {formatContent(currentQuestion.content)}
+          </T.TestContent>
+
+          <img
+            src={NextButton}
+            alt="다음"
+            onClick={goToNextQuestion}
+            style={{
+              opacity:
+                currentQuestionIndex === responseData.data.length - 1 ? 0 : 1,
+              pointerEvents:
+                currentQuestionIndex === responseData.data.length - 1
+                  ? 'none'
+                  : 'auto',
+            }}
+          />
+        </T.TestTextBox>
         {currentQuestion.answers.map(
           (answer: { content: string; answer_id: number }) => (
             <T.SelectButton
@@ -104,25 +155,17 @@ export default function TestBox() {
                 selectedAnswers[currentQuestionIndex] === answer.answer_id
               }
               show={showQuestion}
+              style={{
+                paddingTop: '16px',
+                paddingBottom: '16px',
+                height: '100%',
+                width: '100%',
+              }}
             >
-              {answer.content}
+              {formatContent(answer.content)}
             </T.SelectButton>
           ),
         )}
-        <div>
-          <button
-            onClick={goToPreviousQuestion}
-            disabled={currentQuestionIndex === 0}
-          >
-            이전
-          </button>
-          <button
-            onClick={goToNextQuestion}
-            disabled={currentQuestionIndex === questions.length - 1}
-          >
-            다음
-          </button>
-        </div>
       </T.TestBody>
     </MobileLayout>
   );
