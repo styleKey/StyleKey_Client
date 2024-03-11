@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import NextButton from './images/Next.svg';
 import PrevButton from './images/Prev.svg';
 import React from 'react';
+import { requestPost } from '../../util/http';
 
 export default function TestBox() {
   const navigate = useNavigate();
@@ -79,9 +80,16 @@ export default function TestBox() {
       setSelectedAnswers(updatedAnswers);
       setShowQuestion(false);
 
-      setTimeout(() => {
-        console.log(updatedAnswers);
-        navigate('/result');
+      setTimeout(async () => {
+        try {
+          // POST 요청 보내기
+          const responseData = await requestPost(updatedAnswers);
+          console.log('POST 요청 성공:', responseData);
+          navigate('/result');
+        } catch (error) {
+          console.error('POST 요청 실패:', error);
+          // 요청이 실패하면 에러 처리
+        }
       }, 500);
     }
   };
