@@ -1,4 +1,3 @@
-import React from 'react';
 import * as R from './styles/ResultPage.style';
 
 function Description() {

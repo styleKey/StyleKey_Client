@@ -1,5 +1,3 @@
-import React from 'react';
-
 import MobileLayout from '../components/common/Layout';
 
 import Profile from '../components/Mypage/Profile';
