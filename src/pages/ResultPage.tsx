@@ -1,4 +1,3 @@
-import React from 'react';
 import * as R from '../components/ResultPage/styles/ResultPage.style';
 
 import MobileLayout from '../components/common/Layout';

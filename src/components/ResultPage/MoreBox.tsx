@@ -1,5 +1,3 @@
-import React from 'react';
-
 import * as M from './MoreBox.style';
 import { Button, Text } from '../common/Common';
 
@@ -10,7 +8,7 @@ interface BoxProps {
   btnText: string;
 }
 
-function MoreBox({ title, imgSrc, caption, btnText }: BoxProps) {
+function MoreBox({ title, caption, btnText }: BoxProps) {
   return (
     <M.Box>
       <Text $fontSize={16} $fontWeight={700}>

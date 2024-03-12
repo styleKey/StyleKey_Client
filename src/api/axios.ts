@@ -6,10 +6,10 @@ const axiosInstance = axios.create({
 });
 
 //refreshToken 보내고 accessToken 요청하는 로직을 axiosInstance로 할 경우 무한루프에 빠져서 새로운 axiosInstance를 생성했습니다.
-const axiosInstanceForRefresh = axios.create({
-  baseURL: 'http://13.125.106.125:9000',
-  withCredentials: true,
-});
+// const axiosInstanceForRefresh = axios.create({
+//   baseURL: 'http://13.125.106.125:9000',
+//   withCredentials: true,
+// });
 
 // // Response Interceptor 설정 (일단은 accessToken이랑 refreshToken 때문에 response 만 생성했음)
 // axiosInstance.interceptors.response.use(
