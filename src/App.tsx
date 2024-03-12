@@ -11,6 +11,9 @@ import ResultPage from './pages/ResultPage.tsx';
 import TestStartPage from './pages/TestStartpage.tsx';
 import TestPage from './pages/TestPage.tsx';
 
+// TEMP
+import LikePage from './components/Mypage/LikePage/LikePage.tsx';
+
 const CenteredContainer = styled.div`
   max-width: 390px; // 최대 가로 길이 (피그마에 있는 대로)
   min-width: 320px; // 최소 가로 길이 (아이폰 SE)
@@ -32,9 +35,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
               <Route path="/login" element={<Login />}></Route>
-              <Route path="/mypage" element={<Mypage />}>
-                <Route path="/mypage/history"></Route>
-                <Route path="/mypage/favorite"></Route>
+              <Route path="/mypage">
+                <Route index element={<Mypage />} />
+                <Route path="/mypage/history" />
+                <Route path="/mypage/likes" element={<LikePage />} />
               </Route>
               <Route path="/oauth/redirect" element={<RedirectPage />} />
               <Route path="/teststart" element={<TestStartPage />} />
