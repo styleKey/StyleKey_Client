@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import arrow_img from './images/Next.png';
@@ -8,11 +7,12 @@ type ItemProps = {
   icon: string;
   itemName: string;
   first?: string;
+  onClick: () => void;
 };
 
-function SelectItem({ icon, itemName }: ItemProps) {
+function SelectItem({ icon, itemName, onClick }: ItemProps) {
   return (
-    <ItemBox>
+    <ItemBox onClick={onClick}>
       <SmallBox>
         <img src={icon} />
         <Text $marginLeft={12}>{itemName}</Text>
