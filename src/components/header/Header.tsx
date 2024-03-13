@@ -16,6 +16,7 @@ interface Paths {
 const PATH_CONVERT: Paths = {
   '/login': '로그인',
   '/teststart': '패션 유형 테스트',
+  '/test': '패션 유형 테스트',
   '/mypage': '마이페이지',
   '/mypage/likes': '좋아요',
 };
@@ -24,10 +25,6 @@ function Header() {
   const navigate = useNavigate();
   const isAuth = useSelector((state: AppState) => state.auth.isAuthenticated);
   const location = useLocation();
-  const isLoginPath = location.pathname === '/login';
-  const isTestPage = location.pathname === '/teststart';
-  const isTestPath = location.pathname === '/test';
-  const isResultPath = location.pathname === '/result';
   const pathName: string = location.pathname;
 
   function headerMain() {
@@ -42,6 +39,12 @@ function Header() {
     }
   }
 
+  <>
+    <He.HeaderButtons>
+      <img src={FavoriteButtonLogo} alt="Favorite Button" />
+    </He.HeaderButtons>
+    <Login />
+  </>;
   return (
     <>
       <He.NavBar2></He.NavBar2>
@@ -55,38 +58,16 @@ function Header() {
         </He.LeftSection>
         {headerMain()}
         <He.RightSection>
-          {isAuth ? (
+          {isAuth && pathName.includes('/test') && <></>}
+          {isAuth && !pathName.includes('/test') && (
             <>
-              {(() => {
-                switch (true) {
-                  case isTestPage:
-                    return <></>;
-                  case isTestPath:
-                    return <></>;
-                  case isLoginPath:
-                    return (
-                      <>
-                        <He.HeaderButtons>
-                          <img src={FavoriteButtonLogo} alt="Favorite Button" />
-                        </He.HeaderButtons>
-                        <Login />
-                      </>
-                    );
-                  default:
-                    return (
-                      <>
-                        <He.HeaderButtons>
-                          <img src={FavoriteButtonLogo} alt="Favorite Button" />
-                        </He.HeaderButtons>
-                        <Login />
-                      </>
-                    );
-                }
-              })()}
+              <He.HeaderButtons>
+                <img src={FavoriteButtonLogo} alt="Favorite Button" />
+              </He.HeaderButtons>
+              <Login />
             </>
-          ) : (
-            !isLoginPath && <Login /> // isAuth가 아니고, isLoginState도 아닐 때만 <Login/> 렌더링
           )}
+          {!isAuth && !pathName.includes('/login') && <Login />}
         </He.RightSection>
       </He.NavBar>
     </>
