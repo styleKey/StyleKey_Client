@@ -1,12 +1,21 @@
+import { useState } from 'react';
 import * as LI from './LikedItems.style';
 
 const TEMP = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
 function LikedItems() {
+  const [isLike, setIsLike] = useState(true);
+
   return (
     <LI.GridLayout>
       {TEMP.map((item) => (
-        <LI.Box>{item}</LI.Box>
+        <LI.Box>
+          {item}
+          <LI.HeartBox
+            isLike={isLike}
+            onClick={() => setIsLike((prev) => !prev)}
+          />
+        </LI.Box>
       ))}
       {TEMP.length === 0 && (
         <LI.NoItemText>

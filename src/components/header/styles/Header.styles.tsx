@@ -5,7 +5,7 @@ export const NavBar2 = styled.div`
   position: fixed;
   width: 100%;
   z-index: 1000;
-  height: 130px;
+  height: 100px;
   background-color: white;
 
   //iphone 6/7/8 plus
@@ -28,10 +28,10 @@ export const NavBar = styled.div`
   flex-direction: row;
   align-items: center;
   text-align: center;
-  height: 130px;
+  height: 100px;
   border-bottom: 1px solid black;
   background-color: white;
-  padding-top: 32px;
+  padding-top: 40px;
 
   //iphone 6/7/8 plus
   @media (max-height: 737px) {
