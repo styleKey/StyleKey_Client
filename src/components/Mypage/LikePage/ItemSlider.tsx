@@ -1,16 +1,41 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 function ItemSlider() {
   // TODO : data fetchin으로 목록 아이템 가져오기
   // TODO : Sort 기능 추가
+  const [section, setSection] = useState('코디룩');
+  const [categories, setCategories] = useState('전체보기');
+
   return (
     <div style={{ margin: '20px 0' }}>
       <SliderBox>
-        <SlideItem $selected={true}>코디룩</SlideItem>
-        <SlideItem>아이템</SlideItem>
+        <SlideItem
+          $selected={section === '코디룩'}
+          onClick={() => {
+            setSection(() => '코디룩');
+          }}
+        >
+          코디룩
+        </SlideItem>
+        <SlideItem
+          $selected={section === '아이템'}
+          onClick={() => {
+            setSection(() => '아이템');
+          }}
+        >
+          아이템
+        </SlideItem>
       </SliderBox>
       <SliderBox style={{ marginTop: '12px' }}>
-        <SlideItem $selected={true}>전체보기</SlideItem>
+        <SlideItem
+          $selected={categories === '전체보기'}
+          onClick={() => {
+            setCategories(() => '전체보기');
+          }}
+        >
+          전체보기
+        </SlideItem>
         <SmallSlideItem>가나다</SmallSlideItem>
         <SmallSlideItem>가나다</SmallSlideItem>
         <SmallSlideItem>가나다</SmallSlideItem>
@@ -52,6 +77,8 @@ const SlideItem = styled.div<{ $selected?: boolean }>`
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
+
+  cursor: pointer;
 `;
 
 const SmallSlideItem = styled(SlideItem)`
