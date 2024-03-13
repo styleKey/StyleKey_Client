@@ -28,7 +28,14 @@ function ItemSlider() {
         </SlideItem>
       </SliderBox>
       <SliderBox style={{ marginTop: '12px' }}>
-        <SlideItem $selected={categories === '전체보기'}>전체보기</SlideItem>
+        <SlideItem
+          $selected={categories === '전체보기'}
+          onClick={() => {
+            setCategories(() => '전체보기');
+          }}
+        >
+          전체보기
+        </SlideItem>
         <SmallSlideItem>가나다</SmallSlideItem>
         <SmallSlideItem>가나다</SmallSlideItem>
         <SmallSlideItem>가나다</SmallSlideItem>
