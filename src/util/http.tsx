@@ -11,3 +11,15 @@ export async function getStyleImages() {
   const images = response.data;
   return images;
 }
+
+export async function requestPost(updatedAnswers: any) {
+  try {
+    const response = await axiosInstance.post('/api/test', {
+      answer_ids: updatedAnswers,
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error while sending POST request:', error);
+    throw error;
+  }
+}
