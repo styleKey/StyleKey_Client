@@ -85,6 +85,11 @@ export default function TestBox() {
           // POST 요청 보내기
           const responseData = await requestPost(updatedAnswers);
           console.log('POST 요청 성공:', responseData);
+          const testResultDetails = responseData.data.test_result_details;
+          localStorage.setItem(
+            'testResultDetails',
+            JSON.stringify(testResultDetails),
+          );
           navigate('/result');
         } catch (error) {
           console.error('POST 요청 실패:', error);
