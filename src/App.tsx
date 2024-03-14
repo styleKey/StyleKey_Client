@@ -44,7 +44,7 @@ function App() {
               <Route path="/teststart" element={<TestStartPage />} />
               <Route path="/test" element={<TestPage />} />
               <Route path="/test" />
-              <Route path="/result" element={<ResultPage />} />
+              {/* <Route path="/result" element={<ResultPage />} /> */}
               <Route path="/points">
                 <Route path="/points/detail">
                   <Route path="/points/detail/cordinate" />
