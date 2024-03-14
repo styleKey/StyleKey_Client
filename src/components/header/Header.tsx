@@ -1,8 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../store/auth.tsx';
 
 import Login from './LoginAuth.tsx';
-import { AppState } from '../../store/index.tsx';
 import * as He from './styles/Header.styles.tsx';
 import FavoriteButtonLogo from './images/FavoriteButton.svg';
 import BackButton from './images/backbutton.svg';
@@ -22,8 +21,8 @@ const PATH_CONVERT: Paths = {
 };
 
 function Header() {
+  const { auth } = useStore();
   const navigate = useNavigate();
-  const isAuth = useSelector((state: AppState) => state.auth.isAuthenticated);
   const location = useLocation();
   const pathName: string = location.pathname;
 
@@ -58,8 +57,8 @@ function Header() {
         </He.LeftSection>
         {headerMain()}
         <He.RightSection>
-          {isAuth && pathName.includes('/test') && <></>}
-          {isAuth && !pathName.includes('/test') && (
+          {auth && pathName.includes('/test') && <></>}
+          {auth && !pathName.includes('/test') && (
             <>
               <He.HeaderButtons>
                 <img src={FavoriteButtonLogo} alt="Favorite Button" />
@@ -67,7 +66,7 @@ function Header() {
               <Login />
             </>
           )}
-          {!isAuth && !pathName.includes('/login') && <Login />}
+          {!auth && !pathName.includes('/login') && <Login />}
         </He.RightSection>
       </He.NavBar>
     </>

@@ -1,21 +1,19 @@
 import NLoginLogo from './images/NLoginButton.svg';
 import LoginLogo from './images/LoginButton.svg';
 import { HeaderButtons } from './styles/Header.styles.tsx';
-import { useSelector } from 'react-redux';
-import { AppState } from '../../store/index.tsx';
+import { useStore } from '../../store/auth.tsx';
 import { useNavigate } from 'react-router-dom';
-/**TODO : Login 파일명 중복되어서 파일명 수정필요 */
+
 function LoginAuth() {
   const navigate = useNavigate();
   const navigatetoLogin = () => {
     navigate('/login');
   };
-
-  const isAuth = useSelector((state: AppState) => state.auth.isAuthenticated);
+  const { auth } = useStore();
 
   return (
     <HeaderButtons>
-      {isAuth ? (
+      {auth ? (
         <img
           src={LoginLogo}
           alt="Loged in Button"
