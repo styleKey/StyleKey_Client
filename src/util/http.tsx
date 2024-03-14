@@ -14,7 +14,7 @@ export async function getStyleImages() {
 
 export async function requestPost(updatedAnswers: any) {
   try {
-    const response = await axiosInstance.post('/api/test', {
+    const response = await axiosInstance.post('/api/tests/preview', {
       answer_ids: updatedAnswers,
     });
     return response.data;
