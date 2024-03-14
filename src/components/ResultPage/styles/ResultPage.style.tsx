@@ -36,7 +36,6 @@ export const ImgWrapper = styled.div`
   width: 100%;
   height: 448px;
   margin-top: 14px;
-  background-color: #d29bd2;
 `;
 
 export const Title = styled(Text)`
@@ -50,10 +49,11 @@ export const Line = styled.div`
 `;
 
 export const ListItem = styled.li`
-  list-style-type: circle;
-  list-style-position: inside;
+  list-style-type: disc;
+  margin-left: 20px;
   line-height: 125%;
   margin-bottom: 16px;
+  word-break: keep-all;
 `;
 
 export const LinkButton = styled(Button)`
