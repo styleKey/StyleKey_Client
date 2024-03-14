@@ -1,22 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-const initialAuthState = {
-  isAuthenticated: false,
+type Store = {
+  auth: boolean;
+  login: () => void;
 };
 
-const authSlice = createSlice({
-  name: 'auth',
-  initialState: initialAuthState,
-  reducers: {
-    login(state) {
-      state.isAuthenticated = true;
+export const useStore = create(
+  persist<Store>(
+    (set) => ({
+      auth: false,
+      login: () => set({ auth: true }),
+    }),
+    {
+      name: 'auth-storage',
     },
-    logout(state) {
-      state.isAuthenticated = false;
-    },
-  },
-});
-
-export const authActions = authSlice.actions;
-
-export default authSlice.reducer;
+  ),
+);

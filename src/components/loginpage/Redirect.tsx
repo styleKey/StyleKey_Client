@@ -1,14 +1,10 @@
-import { useDispatch } from 'react-redux';
-import { authActions } from '../../store/auth';
+import { useStore } from '../../store/auth';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const RedirectPage = () => {
-  const dispatch = useDispatch();
+  const { login } = useStore();
   const navigate = useNavigate();
-
-  const loginHandler = () => {
-    dispatch(authActions.login());
-  };
 
   function getQueryParameter(param: string) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -17,13 +13,15 @@ const RedirectPage = () => {
 
   const accessToken = getQueryParameter('token');
 
-  if (accessToken !== null) {
-    localStorage.setItem('accessToken', accessToken);
-    loginHandler();
-    setTimeout(() => {
-      navigate('/');
-    }, 100);
-  }
+  useEffect(() => {
+    if (accessToken !== null) {
+      localStorage.setItem('accessToken', accessToken);
+      login();
+      setTimeout(() => {
+        navigate('/');
+      }, 100);
+    }
+  }, [accessToken, login, navigate]);
 
   return <div>인증 중입니다. 잠시만 기다려 주세요...</div>;
 };
