@@ -3,13 +3,13 @@
   width: 100%;
   height: 100%;
   display: flex;
-  padding-top: 32px;
+  padding-top: 60px;
 }
 
 /* 슬라이더의 이미지를 위한 설정 */
 .swiper-slide {
   background-size: cover;
-  width: 264px;
+  width: 266px;
   height: 400px;
   display: flex;
   align-items: center;

@@ -7,7 +7,7 @@ const fadeOut = keyframes`
 `;
 export const TestBody = styled.div`
   width: 100%;
-  margin-top: 16px;
+  margin-top: 44px;
   display: flex;
   flex-direction: column;
 `;

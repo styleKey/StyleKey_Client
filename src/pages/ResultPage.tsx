@@ -9,6 +9,8 @@ import MoreBox from '../components/ResultPage/MoreBox';
 import link_img from '../components/ResultPage/images/link.svg';
 import retry_img from '../components/ResultPage/images/update.svg';
 
+import StylePointDetail from '../components/stylepoints/StylePointDetail';
+
 function ResultPage() {
   // 로컬 스토리지에서 testResultDetails 배열을 가져옵니다.
   const storedTestResultDetailsString =
@@ -16,6 +18,11 @@ function ResultPage() {
   if (storedTestResultDetailsString !== null) {
     const storedTestResultDetails = JSON.parse(storedTestResultDetailsString);
     console.log(storedTestResultDetails);
+    console.log(typeof storedTestResultDetails[0].style_point_id); // 이것은 변수의 타입을 콘솔에 출력합니다.
+    const styleDetails = StylePointDetail({
+      id: storedTestResultDetails[0].style_point_id,
+    });
+    console.log(styleDetails);
     return (
       <MobileLayout>
         {storedTestResultDetails !== null ? (
@@ -26,16 +33,24 @@ function ResultPage() {
               </Text>
               <R.KeyTypo>
                 변화에 민감하고 <br /> 개성을 추구하는{'   '}
-                <span>유니크</span>
+                <span>{styleDetails?.stylepoint}</span>
               </R.KeyTypo>
               <Text $fontSize={12} $fontWeight={400} $marginTop={5}>
                 전체 패션 포인트 중{' '}
-                {(storedTestResultDetails[0].score / 8) * 100}%의 유니크
-                포인트가 나왔어요!{' '}
+                {(storedTestResultDetails[0].score / 8) * 100}%의{' '}
+                <span>{styleDetails?.stylepoint}</span> 포인트가 나왔어요!{' '}
               </Text>
             </div>
-            <R.ImgWrapper />
-            <Description />
+            <R.ImgWrapper>
+              <img
+                src={storedTestResultDetails[0].style_point_image}
+                style={{ width: '100%' }}
+              ></img>
+            </R.ImgWrapper>
+            <Description
+              stylePoint={styleDetails?.stylepoint}
+              details={styleDetails?.details}
+            />
             <R.LinkButton>
               <img src={link_img} alt="link" />
               결과 공유하기
