@@ -10,13 +10,13 @@ const blink = keyframes`
 export const HomeTop = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 65dvh;
+  height: 63dvh;
 `;
 
 export const HomeMiddle = styled.div`
   display: flex;
   flex-direction: column;
-  height: 27dvh;
+  height: 30dvh;
   position: relative;
 `;
 
@@ -26,7 +26,7 @@ export const HomeBottom = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@ export const Container = styled.div`
 
 export const TestButton = styled.button`
   width: 85%;
-  height: 8.5dvh;
+  height: 68px;
   border-radius: 10px;
   margin: 0 auto;
   border-radius: 12px;
@@ -52,7 +52,7 @@ export const BlinkingImage1 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 10dvh;
+  bottom: 14dvh;
 `;
 export const BlinkingImage2 = styled.img`
   animation: ${blink} 2.5s linear infinite;
@@ -60,5 +60,5 @@ export const BlinkingImage2 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 11dvh;
+  bottom: 13dvh;
 `;
