@@ -5,7 +5,7 @@ export const NavBar2 = styled.div`
   position: fixed;
   width: 100%;
   z-index: 1000;
-  height: calc(100px - env(safe-area-inset-top));
+  height: 70px;
   background-color: white;
 `;
 
@@ -20,10 +20,9 @@ export const NavBar = styled.div`
   flex-direction: row;
   align-items: center;
   text-align: center;
-  height: calc(100px - env(safe-area-inset-top));
+  height: 70px;
   border-bottom: 1px solid black;
   background-color: white;
-  padding-top: 40px;
 `;
 
 export const Logo = styled.div`
