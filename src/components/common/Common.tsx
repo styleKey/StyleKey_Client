@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { TestStartButton } from '../HomePage/styles/Homepage.styles';
+import { TestButton } from '../HomePage/styles/Homepage.styles';
 export const Text = styled.p<{
   $marginTop?: number;
   $marginBottom?: number;
@@ -66,7 +66,7 @@ export const FadeInText = styled(Text)<FadeInTextProps>`
   opacity: 0;
 `;
 
-export const FadeInButton = styled(TestStartButton)<FadeInTextProps>`
+export const FadeInButton = styled(TestButton)<FadeInTextProps>`
   animation: ${fadeIn} 1s ease-in forwards;
   animation-delay: ${(props) => props.delay || '0s'};
   opacity: 0;

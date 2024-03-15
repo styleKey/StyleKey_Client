@@ -7,22 +7,16 @@ const blink = keyframes`
 
 //HomeTop, HomeMiddle의 height는 HomeBottom의 height에 따라서 조정 필요할 듯.
 
-export const Homepage = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 16px;
-`;
-
 export const HomeTop = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 520px;
+  height: 65dvh;
 `;
 
 export const HomeMiddle = styled.div`
   display: flex;
   flex-direction: column;
-  height: 254px;
+  height: 27dvh;
   position: relative;
 `;
 
@@ -40,29 +34,16 @@ export const Container = styled.div`
 `;
 
 export const TestButton = styled.button`
-  width: 80%;
-  height: 68px;
+  width: 85%;
+  height: 8.5dvh;
   border-radius: 10px;
   margin: 0 auto;
-  margin-top: 10px;
   border-radius: 12px;
   border: 1px solid #000;
   background: #000;
   color: white;
   font-size: 20px;
   font-weight: 700;
-`;
-
-export const TestStartButton = styled.button`
-  width: 288px;
-  height: 68px;
-  border-radius: 12px;
-  border: 1px solid #000;
-  background: #000;
-  color: white;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 70px auto 24px;
 `;
 
 export const BlinkingImage1 = styled.img`
@@ -71,7 +52,7 @@ export const BlinkingImage1 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 100px;
+  bottom: 10dvh;
 `;
 export const BlinkingImage2 = styled.img`
   animation: ${blink} 2.5s linear infinite;
@@ -79,5 +60,5 @@ export const BlinkingImage2 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 110px;
+  bottom: 11dvh;
 `;
