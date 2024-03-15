@@ -5,7 +5,7 @@ export const NavBar2 = styled.div`
   position: fixed;
   width: 100%;
   z-index: 1000;
-  height: 8.3dvh;
+  height: 70px;
   background-color: white;
 `;
 
@@ -20,7 +20,7 @@ export const NavBar = styled.div`
   flex-direction: row;
   align-items: center;
   text-align: center;
-  height: 8.3dvh; // 기존의 height 70px 맞추려고
+  height: 70px;
   border-bottom: 1px solid black;
   background-color: white;
 `;
