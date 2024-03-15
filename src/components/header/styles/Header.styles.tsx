@@ -7,15 +7,6 @@ export const NavBar2 = styled.div`
   z-index: 1000;
   height: 100px;
   background-color: white;
-
-  //iphone 6/7/8 plus
-  @media (max-height: 737px) {
-    height: 80px;
-  }
-  //iphone SE
-  @media (max-height: 668px) {
-    height: 70px;
-  }
 `;
 
 export const NavBar = styled.div`
@@ -32,15 +23,6 @@ export const NavBar = styled.div`
   border-bottom: 1px solid black;
   background-color: white;
   padding-top: 40px;
-
-  //iphone 6/7/8 plus
-  @media (max-height: 737px) {
-    height: 80px;
-  }
-  //iphone SE
-  @media (max-height: 668px) {
-    height: 70px;
-  }
 `;
 
 export const Logo = styled.div`
