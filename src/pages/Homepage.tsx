@@ -21,7 +21,7 @@ const Homepage: React.FC = () => {
     if (homeBottomRef.current) {
       const homeBottomPosition =
         homeBottomRef.current.getBoundingClientRect().top;
-      const offsetPosition = homeBottomPosition + window.scrollY - 102;
+      const offsetPosition = homeBottomPosition + window.scrollY - 70;
 
       window.scrollTo({
         top: offsetPosition,
