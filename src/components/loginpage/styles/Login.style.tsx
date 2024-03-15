@@ -8,9 +8,8 @@ export const ImgContainer = styled.img`
 `;
 
 export const ImgContainer2 = styled.img`
-  width: 146px;
-  height: 192px;
-  margin: 100px auto 60px;
+  height: 25dvh;
+  margin: 10dvh auto 7dvh;
 `;
 
 export const ButtonContainer = styled.div`
