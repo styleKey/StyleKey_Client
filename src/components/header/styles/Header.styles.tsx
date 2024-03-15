@@ -3,6 +3,7 @@ import styled from 'styled-components';
 //보이는 상황을 방지하기 위해 선언함
 export const NavBar2 = styled.div`
   position: fixed;
+  top: 0; // 상단에 0 값을 설정하여 노치 영역까지 확장
   width: 100%;
   z-index: 1000;
   height: 100px;
@@ -11,6 +12,7 @@ export const NavBar2 = styled.div`
 
 export const NavBar = styled.div`
   position: fixed;
+  top: 0;
   width: calc(100% - 32px);
   left: 16px;
   right: 16px;
