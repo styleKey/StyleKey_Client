@@ -16,13 +16,13 @@ export const Homepage = styled.div`
 export const HomeTop = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 61svh;
+  height: 520px;
 `;
 
 export const HomeMiddle = styled.div`
   display: flex;
   flex-direction: column;
-  height: 32svh;
+  height: 254px;
   position: relative;
 `;
 
@@ -41,7 +41,7 @@ export const Container = styled.div`
 
 export const TestButton = styled.button`
   width: 80%;
-  height: 25%;
+  height: 68px;
   border-radius: 10px;
   margin: 0 auto;
   margin-top: 10px;
@@ -71,7 +71,7 @@ export const BlinkingImage1 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 130px;
+  bottom: 100px;
 `;
 export const BlinkingImage2 = styled.img`
   animation: ${blink} 2.5s linear infinite;
@@ -79,5 +79,5 @@ export const BlinkingImage2 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 140px;
+  bottom: 110px;
 `;
