@@ -3,10 +3,9 @@ import styled from 'styled-components';
 //보이는 상황을 방지하기 위해 선언함
 export const NavBar2 = styled.div`
   position: fixed;
-  top: 0; // 상단에 0 값을 설정하여 노치 영역까지 확장
   width: 100%;
   z-index: 1000;
-  height: 100px;
+  height: calc(100px - env(safe-area-inset-top));
   background-color: white;
 `;
 
@@ -21,7 +20,7 @@ export const NavBar = styled.div`
   flex-direction: row;
   align-items: center;
   text-align: center;
-  height: 100px;
+  height: calc(100px - env(safe-area-inset-top));
   border-bottom: 1px solid black;
   background-color: white;
   padding-top: 40px;
