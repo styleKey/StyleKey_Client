@@ -16,13 +16,13 @@ export const Homepage = styled.div`
 export const HomeTop = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 61dvh;
+  height: 61svh;
 `;
 
 export const HomeMiddle = styled.div`
   display: flex;
   flex-direction: column;
-  height: 32dvh;
+  height: 32svh;
   position: relative;
 `;
 
