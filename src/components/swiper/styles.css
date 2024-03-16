@@ -9,8 +9,8 @@
 /* 슬라이더의 이미지를 위한 설정 */
 .swiper-slide {
   background-size: cover;
-  width: calc(50vh * 0.66);
-  height: 46vh;
+  width: calc(50vh * 0.7);
+  height: 47vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
 }
 
 .swiper-pagination {
-  height: 10%;
+  height: 8%;
 }
 
 .swiper-pagination-bullet-active {
