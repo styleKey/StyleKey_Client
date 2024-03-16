@@ -128,7 +128,7 @@ export default function TestBox() {
             <div></div>
           </ProgressBar>
         </T.TestNumber>
-        <T.TestTextBox>
+        <T.TestBoxContainer>
           <img
             src={PrevButton}
             alt="이전"
@@ -138,13 +138,14 @@ export default function TestBox() {
               pointerEvents: currentQuestionIndex === 0 ? 'none' : 'auto',
             }}
           />
-          <T.TestContent>
-            <T.TestPictureBox>
-              <img src={currentQuestion.image_url} alt="테스트 질문 이미지" />
-            </T.TestPictureBox>
-            {formatContent(currentQuestion.content)}
-          </T.TestContent>
-
+          <T.TestTextBox>
+            <T.TestContent>
+              <T.TestPictureBox>
+                <img src={currentQuestion.image_url} alt="테스트 질문 이미지" />
+              </T.TestPictureBox>
+              {formatContent(currentQuestion.content)}
+            </T.TestContent>
+          </T.TestTextBox>
           <img
             src={NextButton}
             alt="다음"
@@ -158,27 +159,23 @@ export default function TestBox() {
                   : 'auto',
             }}
           />
-        </T.TestTextBox>
-        {currentQuestion.answers.map(
-          (answer: { content: string; answer_id: number }) => (
-            <T.SelectButton
-              key={answer.answer_id}
-              onClick={() => handleSelectAnswer(answer.answer_id)}
-              selected={
-                selectedAnswers[currentQuestionIndex] === answer.answer_id
-              }
-              show={showQuestion}
-              style={{
-                paddingTop: '16px',
-                paddingBottom: '16px',
-                height: '100%',
-                width: '100%',
-              }}
-            >
-              {formatContent(answer.content)}
-            </T.SelectButton>
-          ),
-        )}
+        </T.TestBoxContainer>
+        <T.SelectButtonContainer>
+          {currentQuestion.answers.map(
+            (answer: { content: string; answer_id: number }) => (
+              <T.SelectButton
+                key={answer.answer_id}
+                onClick={() => handleSelectAnswer(answer.answer_id)}
+                selected={
+                  selectedAnswers[currentQuestionIndex] === answer.answer_id
+                }
+                show={showQuestion}
+              >
+                {formatContent(answer.content)}
+              </T.SelectButton>
+            ),
+          )}
+        </T.SelectButtonContainer>
       </T.TestBody>
     </MobileLayout>
   );
