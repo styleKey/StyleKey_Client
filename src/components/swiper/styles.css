@@ -3,19 +3,17 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  padding-top: 30px;
 }
 
 /* 슬라이더의 이미지를 위한 설정 */
-.swiper-wrapper {
-  height: 85%;
-  padding-top: 40px;
-}
-
 .swiper-slide {
   background-size: cover;
-  width: 70%;
-  height: 87%;
+  width: 266px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .swiper-slide img {
@@ -27,7 +25,6 @@
 }
 
 .swiper-pagination {
-  height: 13%;
 }
 
 .swiper-pagination-bullet-active {
