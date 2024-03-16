@@ -1,6 +1,5 @@
 import MobileLayout from '../components/common/Layout';
 import * as L from '../components/loginpage/styles/Login.style';
-import * as T from '../components/TestPage/styles/TestPage.style';
 import stylekeylogo from '../components/loginpage/images/stylekeylogo.svg';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -23,25 +22,19 @@ function TestStartPage() {
   };
   return (
     <MobileLayout>
-      <T.TestStartContainer>
-        <T.TestStartTop>
-          <L.ImgContainer2 src={stylekeylogo} alt="logo" />
-          <FadeInText delay="0s" $marginBottom={30} $fontWeight={400}>
-            나는 무슨 유형일까?
-          </FadeInText>
-          <FadeInText delay="1s" $marginBottom={30} $fontWeight={400}>
-            어렵기만한 패션의 세계,
-          </FadeInText>
-          <FadeInText delay="2s" $fontWeight={400}>
-            나만의 스타일을 찾아주는 스타일키!
-          </FadeInText>
-        </T.TestStartTop>
-        <T.TestStartBottom>
-          <FadeInButton delay="3s" onClick={navigateToTest}>
-            패션 성향 테스트 시작!
-          </FadeInButton>
-        </T.TestStartBottom>
-      </T.TestStartContainer>
+      <L.ImgContainer2 src={stylekeylogo} alt="logo" />
+      <FadeInText delay="0s" $marginBottom={30} $fontWeight={400}>
+        나는 무슨 유형일까?
+      </FadeInText>
+      <FadeInText delay="1s" $marginBottom={30} $fontWeight={400}>
+        어렵기만한 패션의 세계,
+      </FadeInText>
+      <FadeInText delay="2s" $fontWeight={400}>
+        나만의 스타일을 찾아주는 스타일키!
+      </FadeInText>
+      <FadeInButton delay="3s" onClick={navigateToTest}>
+        패션 성향 테스트 시작!
+      </FadeInButton>
     </MobileLayout>
   );
 }
