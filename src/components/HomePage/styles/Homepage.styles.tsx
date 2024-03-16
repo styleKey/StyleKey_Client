@@ -7,16 +7,24 @@ const blink = keyframes`
 
 //HomeTop, HomeMiddle의 height는 HomeBottom의 height에 따라서 조정 필요할 듯.
 
+export const HomeContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+`;
+
 export const HomeTop = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 500px;
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const HomeMiddle = styled.div`
   display: flex;
   flex-direction: column;
-  height: 230px;
+  height: 35%;
   position: relative;
 `;
 
@@ -26,7 +34,7 @@ export const HomeBottom = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  height: 93%;
+  height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
