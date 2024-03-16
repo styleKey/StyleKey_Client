@@ -24,26 +24,9 @@
   /* 이미지가 가운데 정렬되도록 마진 자동 설정 */
 }
 
+.swiper-pagination {
+}
+
 .swiper-pagination-bullet-active {
   background: black;
-}
-
-@media (min-height: 845px) and (max-height: 932px) {
-  .swiper-slide {
-    width: 266px;
-    height: 400px;
-  }
-}
-
-@media (min-height: 668px) and (max-height: 700px) {
-  .swiper-slide {
-    width: 230px;
-    height: 330px;
-  }
-}
-@media (max-height: 668px) {
-  .swiper-slide {
-    width: 230px;
-    height: 320px;
-  }
 }
