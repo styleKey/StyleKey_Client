@@ -70,5 +70,5 @@ export const FadeInButton = styled(TestButton)<FadeInTextProps>`
   animation: ${fadeIn} 1s ease-in forwards;
   animation-delay: ${(props) => props.delay || '0s'};
   opacity: 0;
-  margin-top: 50px;
+  margin-top: 4dvh;
 `;
