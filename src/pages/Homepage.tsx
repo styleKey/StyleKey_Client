@@ -32,28 +32,34 @@ const Homepage: React.FC = () => {
 
   return (
     <MobileLayout>
-      <Ho.HomeContainer>
-        <Ho.HomeTop>
-          <Ho.Container>
-            <Slide />
-          </Ho.Container>
-        </Ho.HomeTop>
-        <Ho.HomeMiddle>
-          <Ho.TestButton onClick={navigateToTestPage}>
-            패션 취향 테스트 하러 가기
-          </Ho.TestButton>
-          <Ho.BlinkingImage1
-            src={DownButton}
-            alt="스크롤 버튼"
-            style={{
-              width: '50px',
-              margin: '0 auto',
-            }}
-            onClick={scrollToBottom}
-          ></Ho.BlinkingImage1>
-        </Ho.HomeMiddle>
-      </Ho.HomeContainer>
-
+      <Ho.HomeTop>
+        <Ho.Container>
+          <Slide />
+        </Ho.Container>
+      </Ho.HomeTop>
+      <Ho.HomeMiddle>
+        <Ho.TestButton onClick={navigateToTestPage}>
+          패션 취향 테스트 하러 가기
+        </Ho.TestButton>
+        <Ho.BlinkingImage1
+          src={DownButton}
+          alt="스크롤 버튼"
+          style={{
+            width: '30px',
+            margin: '0 auto',
+          }}
+          onClick={scrollToBottom}
+        ></Ho.BlinkingImage1>
+        <Ho.BlinkingImage2
+          src={DownButton}
+          alt="스크롤 버튼"
+          style={{
+            width: '30px',
+            margin: '0 auto',
+          }}
+          onClick={scrollToBottom}
+        ></Ho.BlinkingImage2>
+      </Ho.HomeMiddle>
       <Ho.HomeBottom ref={homeBottomRef}>
         <div>
           <div>
