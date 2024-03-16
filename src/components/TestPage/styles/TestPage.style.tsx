@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
+import { Button } from '../../common/Common';
 
 const fadeOut = keyframes`
   from { opacity: 1; }
@@ -6,14 +7,14 @@ const fadeOut = keyframes`
 `;
 export const TestBody = styled.div`
   width: 100%;
-  height: calc(100dvh - 102px);
-  padding-top: 15px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
 `;
 
 export const TestNumber = styled.div`
   width: 100%;
+  height: 50px;
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 400;
@@ -35,25 +36,20 @@ export const TestContent = styled.div`
   width: 100%;
 `;
 
-export const TestBoxContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  border-radius: 12px;
-  border: 2px solid var(--Foundation-Grey-Darker, #363636);
-  background: var(--White, #fff);
-  margin-bottom: 10px;
-`;
-
 export const TestTextBox = styled.div`
+  background-color: #f0f0f0;
   display: flex;
   flex-direction: row;
   width: 100%;
   padding: 20px 0px;
   text-align: center;
+  margin-bottom: 15px;
   align-items: center;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
+  border-radius: 12px;
+  border: 2px solid var(--Foundation-Grey-Darker, #363636);
+  background: var(--White, #fff);
 `;
 
 export const TestPictureBox = styled.div`
@@ -65,24 +61,15 @@ interface SelectButtonProps {
   selected: boolean;
   show: boolean;
 }
-
-export const SelectButtonContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-export const SelectButton = styled.button.withConfig({
+export const SelectButton = styled(Button).withConfig({
   shouldForwardProp: (prop) => !['show'].includes(prop),
 })<SelectButtonProps>`
   display: flex;
-  border: none;
   flex-direction: row;
-  justify-content: center;
   border-radius: 12px;
+  text-align: center;
   width: 100%;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   color: black;
   font-size: 16px;
   font-weight: 400;
@@ -94,28 +81,4 @@ export const SelectButton = styled.button.withConfig({
       : css`
           ${fadeOut} 0.6s
         `};
-`;
-
-export const TestStartContainer = styled.div`
-  width: 100%;
-  height: calc(100dvh - 102px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const TestStartTop = styled.div`
-  width: 100%;
-  height: 65%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const TestStartBottom = styled.div`
-  width: 100%;
-  height: 35%;
-  display: flex;
-  align-items: center;
 `;
