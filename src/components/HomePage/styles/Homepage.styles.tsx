@@ -6,15 +6,10 @@ const blink = keyframes`
 }`;
 
 //HomeTop, HomeMiddle의 height는 HomeBottom의 height에 따라서 조정 필요할 듯.
-export const HomeContainer = styled.div`
-  width: 100%;
-  height: calc(100vh - 70px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`;
+
 export const HomeTop = styled.div`
   display: flex;
+  justify-content: space-around;
   height: 500px;
 `;
 
@@ -49,10 +44,6 @@ export const TestButton = styled.button`
   color: white;
   font-size: 20px;
   font-weight: 700;
-  @media screen and (min-height: 845px) {
-    width: 90%;
-    height: 80px;
-  }
 `;
 
 export const BlinkingImage1 = styled.img`
@@ -61,7 +52,7 @@ export const BlinkingImage1 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 40px;
+  bottom: 100px;
 `;
 export const BlinkingImage2 = styled.img`
   animation: ${blink} 2.5s linear infinite;
@@ -69,5 +60,5 @@ export const BlinkingImage2 = styled.img`
   position: absolute;
   left: 50%; /* 수평 중앙 정렬을 위해 왼쪽에서 50% 위치 */
   transform: translateX(-50%);
-  bottom: 30px;
+  bottom: 110px;
 `;
