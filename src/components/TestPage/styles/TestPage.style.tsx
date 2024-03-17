@@ -38,6 +38,7 @@ export const TestContent = styled.div`
 
 export const TestTextBox = styled.div`
   background-color: #f0f0f0;
+  word-break: keep-all;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -65,6 +66,7 @@ export const SelectButton = styled(Button).withConfig({
   shouldForwardProp: (prop) => !['show'].includes(prop),
 })<SelectButtonProps>`
   display: flex;
+  word-break: keep-all;
   flex-direction: row;
   border-radius: 12px;
   text-align: center;
