@@ -67,18 +67,18 @@ export default function TestBox() {
   const handleSelectAnswer = (answerId: number) => {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
-    if (showQuestion) {
-      setShowQuestion(false);
-    }
+
     if (currentQuestionIndex < responseData.data.length - 1) {
       setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
 
       setTimeout(() => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
-        setShowQuestion(true); // 이 부분은 그대로 유지
+        setShowQuestion(true);
       }, 500);
     } else {
       setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
 
       setTimeout(async () => {
         try {
@@ -90,6 +90,7 @@ export default function TestBox() {
             'testResultDetails',
             JSON.stringify(testResultDetails),
           );
+          console.log(updatedAnswers);
           navigate('/result');
         } catch (error) {
           console.error('POST 요청 실패:', error);
