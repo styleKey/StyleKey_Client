@@ -15,7 +15,6 @@ export const TestBody = styled.div`
 
 export const TestNumber = styled.div`
   width: 100%;
-  height: 50px;
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 400;
