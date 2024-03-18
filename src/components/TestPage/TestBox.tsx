@@ -72,15 +72,13 @@ export default function TestBox() {
     }
     if (currentQuestionIndex < responseData.data.length - 1) {
       setSelectedAnswers(updatedAnswers);
-      setShowQuestion(false);
 
       setTimeout(() => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
-        setShowQuestion(true);
+        setShowQuestion(true); // 이 부분은 그대로 유지
       }, 500);
     } else {
       setSelectedAnswers(updatedAnswers);
-      setShowQuestion(false);
 
       setTimeout(async () => {
         try {
