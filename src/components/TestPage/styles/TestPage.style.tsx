@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled from 'styled-components';
 import { Button } from '../../common/Common';
 
 export const TestBody = styled.div`
