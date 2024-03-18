@@ -67,17 +67,21 @@ export default function TestBox() {
   const handleSelectAnswer = (answerId: number) => {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
+    setSelectedAnswers(updatedAnswers);
 
     if (currentQuestionIndex < responseData.data.length - 1) {
-      setSelectedAnswers(updatedAnswers);
+      // 먼저 질문을 숨기고
       setShowQuestion(false);
 
+      // 그런 다음에 상태 업데이트를 진행합니다.
       setTimeout(() => {
+        // 선택된 답변을 설정하고 다음 질문으로 이동
         setCurrentQuestionIndex(currentQuestionIndex + 1);
+        // 질문을 다시 보여줍니다.
         setShowQuestion(true);
       }, 500);
     } else {
-      setSelectedAnswers(updatedAnswers);
+      // 마지막 질문의 경우
       setShowQuestion(false);
 
       setTimeout(async () => {
@@ -90,11 +94,9 @@ export default function TestBox() {
             'testResultDetails',
             JSON.stringify(testResultDetails),
           );
-          console.log(updatedAnswers);
           navigate('/result');
         } catch (error) {
           console.error('POST 요청 실패:', error);
-          // 요청이 실패하면 에러 처리
         }
       }, 500);
     }
