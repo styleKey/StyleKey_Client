@@ -29,7 +29,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
         <CenteredContainer>
-          <BrowserRouter>
+          <BrowserRouter basename="https://style-key-client.vercel.app">
             <Header />
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
@@ -42,7 +42,6 @@ function App() {
               <Route path="/oauth/redirect" element={<RedirectPage />} />
               <Route path="/teststart" element={<TestStartPage />} />
               <Route path="/test" element={<TestPage />} />
-              <Route path="/test" />
               <Route path="/result" element={<ResultPage />} />
               <Route path="/points">
                 <Route path="/points/detail">
