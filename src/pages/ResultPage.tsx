@@ -36,9 +36,9 @@ function ResultPage() {
                 <span>{styleDetails?.stylepoint}</span>
               </R.KeyTypo>
               <Text $fontSize={12} $fontWeight={400} $marginTop={5}>
-                전체 패션 포인트 중{' '}
-                {(storedTestResultDetails[0].score / 8) * 100}%의{' '}
-                <span>{styleDetails?.stylepoint}</span> 포인트가 나왔어요!{' '}
+                {styleDetails?.stylepoint} 포인트가{' '}
+                {(storedTestResultDetails[0].score / 8) * 100}%로 제일 높게
+                나왔어요!
               </Text>
             </div>
             <R.ImgWrapper>
