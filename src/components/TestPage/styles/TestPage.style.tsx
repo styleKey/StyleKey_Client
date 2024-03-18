@@ -93,6 +93,4 @@ export const SelectButton = styled(Button).withConfig({
   font-weight: 400;
   background-color: ${(props) => (props.selected ? '#363636' : '#f0f0f0')};
   color: ${(props) => (props.selected ? 'white' : 'black')};
-
-  animation: ${(props) => (props.show ? css`` : css``)};
 `;
