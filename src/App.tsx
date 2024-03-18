@@ -29,7 +29,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
         <CenteredContainer>
-          <BrowserRouter basename="https://style-key-client.vercel.app">
+          <BrowserRouter>
             <Header />
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
