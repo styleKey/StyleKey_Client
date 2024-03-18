@@ -12,6 +12,17 @@ export const TestBody = styled.div`
   padding-top: 15px;
   display: flex;
   flex-direction: column;
+
+  /* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 파이어폭스에서 스크롤바 숨기기 */
+  scrollbar-width: none;
+
+  /* IE 및 엣지에서 스크롤바 숨기기 */
+  -ms-overflow-style: none;
 `;
 
 export const TestNumber = styled.div`
