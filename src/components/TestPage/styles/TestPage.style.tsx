@@ -3,7 +3,7 @@ import { Button } from '../../common/Common';
 
 export const TestBody = styled.div`
   width: 100%;
-  height: calc(100dvh - 70px);
+  height: calc(100dvh - 102px);
   overflow: auto;
   padding-top: 15px;
   display: flex;
