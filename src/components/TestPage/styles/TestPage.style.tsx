@@ -7,7 +7,8 @@ const fadeOut = keyframes`
 `;
 export const TestBody = styled.div`
   width: 100%;
-  margin-top: 15px;
+  height: calc(100vh - 102px);
+  padding-top: 15px;
   display: flex;
   flex-direction: column;
 `;
@@ -41,6 +42,7 @@ export const TestTextBox = styled.div`
   word-break: keep-all;
   display: flex;
   flex-direction: row;
+
   width: 100%;
   padding: 20px 0px;
   text-align: center;
@@ -68,10 +70,13 @@ export const SelectButton = styled(Button).withConfig({
   display: flex;
   word-break: keep-all;
   flex-direction: row;
+  height: calc(var(--base-font-size) + 32px);
+  padding-top: 16px;
+  padding-bottom: 16px;
   border-radius: 12px;
   text-align: center;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   color: black;
   font-size: 16px;
   font-weight: 400;
