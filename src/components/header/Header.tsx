@@ -57,16 +57,20 @@ function Header() {
         </He.LeftSection>
         {headerMain()}
         <He.RightSection>
-          {auth && pathName.includes('/test') && <></>}
-          {auth && !pathName.includes('/test') && (
-            <>
-              <He.HeaderButtons>
-                <img src={FavoriteButtonLogo} alt="Favorite Button" />
-              </He.HeaderButtons>
+          {pathName === '/' ? (
+            auth ? (
+              <>
+                <He.HeaderButtons>
+                  <img src={FavoriteButtonLogo} alt="Favorite Button" />
+                </He.HeaderButtons>
+                <Login />
+              </>
+            ) : (
               <Login />
-            </>
+            )
+          ) : (
+            <></>
           )}
-          {!auth && !pathName.includes('/login') && <Login />}
         </He.RightSection>
       </He.NavBar>
     </>
