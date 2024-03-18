@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import stylekeylogo from '../images/stylekeylogo.png';
 //NavBar2는 사용자가 스크롤 이상하게 했을때 밑에 컴포넌트가
 //보이는 상황을 방지하기 위해 선언함
 export const NavBar2 = styled.div`
@@ -27,9 +28,11 @@ export const NavBar = styled.div`
 
 export const Logo = styled.div`
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 120px;
+  height: 33px;
+  background-image: url(${stylekeylogo});
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 export const HeaderButtons = styled.div`

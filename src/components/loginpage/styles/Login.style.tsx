@@ -3,6 +3,7 @@ import { Caption } from '../../../components/common/Common';
 
 export const ImgContainer = styled.img`
   height: 143.5px;
+  object-fit: contain;
   margin-top: 70px;
   margin-bottom: 8px;
 `;

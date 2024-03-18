@@ -1,6 +1,6 @@
 import MobileLayout from '../components/common/Layout';
 import * as L from '../components/loginpage/styles/Login.style';
-import stylekeylogo from '../components/loginpage/images/stylekeylogo.svg';
+import stylekeylogo from '../components/loginpage/images/stylekeymark.png';
 import { Caption, Text } from '../components/common/Common';
 
 import KakaoLogin from '../components/loginpage/KakaoLogin';
