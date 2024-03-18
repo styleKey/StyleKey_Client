@@ -15,7 +15,12 @@
   align-items: center;
   justify-content: center;
 }
-
+.swiper-slide-shadow-left {
+  border-radius: 7.378px;
+}
+.swiper-slide-shadow-right {
+  border-radius: 7.378px;
+}
 .swiper-slide img {
   display: block;
   width: 100%;

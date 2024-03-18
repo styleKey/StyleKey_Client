@@ -168,12 +168,6 @@ export default function TestBox() {
                 selectedAnswers[currentQuestionIndex] === answer.answer_id
               }
               show={showQuestion}
-              style={{
-                paddingTop: '16px',
-                paddingBottom: '16px',
-                height: '100%',
-                width: '100%',
-              }}
             >
               {formatContent(answer.content)}
             </T.SelectButton>
