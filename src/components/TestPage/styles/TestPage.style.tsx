@@ -1,10 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 import { Button } from '../../common/Common';
 
-const fadeOut = keyframes`
-  from { opacity: 1; }
-  to { opacity: 0; }
-`;
 export const TestBody = styled.div`
   width: 100%;
   height: calc(100dvh - 70px);
@@ -93,4 +89,8 @@ export const SelectButton = styled(Button).withConfig({
   font-weight: 400;
   background-color: ${(props) => (props.selected ? '#363636' : '#f0f0f0')};
   color: ${(props) => (props.selected ? 'white' : 'black')};
+  transition: opacity 0.3s ease;
+
+  // show prop에 따라 opacity 변경
+  opacity: ${(props) => (props.show ? 1 : 0)};
 `;
