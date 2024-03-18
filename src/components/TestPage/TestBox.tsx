@@ -67,7 +67,9 @@ export default function TestBox() {
   const handleSelectAnswer = (answerId: number) => {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
-
+    if (showQuestion) {
+      setShowQuestion(false);
+    }
     if (currentQuestionIndex < responseData.data.length - 1) {
       setSelectedAnswers(updatedAnswers);
       setShowQuestion(false);
