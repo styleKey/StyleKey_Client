@@ -1,6 +1,6 @@
 import MobileLayout from '../components/common/Layout';
 import * as L from '../components/loginpage/styles/Login.style';
-import stylekeylogo from '../components/loginpage/images/stylekeylogo.svg';
+import stylekeylogo from '../components/loginpage/images/stylekeymark.png';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { FadeInText, FadeInButton } from '../components/common/Common';
