@@ -68,35 +68,35 @@ export default function TestBox() {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuestionIndex] = answerId;
 
-    setTimeout(() => {
+    if (currentQuestionIndex < responseData.data.length - 1) {
       setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
 
-      if (currentQuestionIndex < responseData.data.length - 1) {
-        setShowQuestion(false);
-        setTimeout(() => {
-          setCurrentQuestionIndex(currentQuestionIndex + 1);
-          setShowQuestion(true);
-        }, 500);
-      } else {
-        setShowQuestion(false);
-        setTimeout(async () => {
-          try {
-            // POST 요청 보내기
-            const responseData = await requestPost(updatedAnswers);
-            console.log('POST 요청 성공:', responseData);
-            const testResultDetails = responseData.data.test_result_details;
-            localStorage.setItem(
-              'testResultDetails',
-              JSON.stringify(testResultDetails),
-            );
-            navigate('/result');
-          } catch (error) {
-            console.error('POST 요청 실패:', error);
-            // 요청이 실패하면 에러 처리
-          }
-        }, 500);
-      }
-    }, 5); // 선택지를 바꾸고 5ms 후에 상태 업데이트
+      setTimeout(() => {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setShowQuestion(true);
+      }, 500);
+    } else {
+      setSelectedAnswers(updatedAnswers);
+      setShowQuestion(false);
+
+      setTimeout(async () => {
+        try {
+          // POST 요청 보내기
+          const responseData = await requestPost(updatedAnswers);
+          console.log('POST 요청 성공:', responseData);
+          const testResultDetails = responseData.data.test_result_details;
+          localStorage.setItem(
+            'testResultDetails',
+            JSON.stringify(testResultDetails),
+          );
+          navigate('/result');
+        } catch (error) {
+          console.error('POST 요청 실패:', error);
+          // 요청이 실패하면 에러 처리
+        }
+      }, 500);
+    }
   };
 
   const goToPreviousQuestion = () => {
