@@ -1,11 +1,41 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
-function ItemSlider() {
+const COORDI_CATEGORIES = [
+  '모던',
+  '글램',
+  '액티브',
+  '레트로',
+  '스트릿',
+  '노멀',
+  '러블리',
+  '유니크',
+];
+
+const ITEM_CATEGORIES = [
+  '상의',
+  '하의',
+  '아우터',
+  '가방',
+  '신발',
+  '악세사리',
+  '드레스',
+];
+
+interface ItemSliderProps {
+  section: string;
+  categories: string;
+  setSection: (props: () => string) => void;
+  setCategories: (props: () => string) => void;
+}
+
+function ItemSlider({
+  section,
+  setSection,
+  categories,
+  setCategories,
+}: ItemSliderProps) {
   // TODO : data fetchin으로 목록 아이템 가져오기
   // TODO : Sort 기능 추가
-  const [section, setSection] = useState('코디룩');
-  const [categories, setCategories] = useState('전체보기');
 
   return (
     <div style={{ margin: '20px 0' }}>
@@ -36,11 +66,28 @@ function ItemSlider() {
         >
           전체보기
         </SlideItem>
-        <SmallSlideItem>가나다</SmallSlideItem>
-        <SmallSlideItem>가나다</SmallSlideItem>
-        <SmallSlideItem>가나다</SmallSlideItem>
-        <SmallSlideItem>가나다</SmallSlideItem>
-        <SmallSlideItem>가나다</SmallSlideItem>
+
+        {section === '코디룩'
+          ? COORDI_CATEGORIES.map((item) => (
+              <SmallSlideItem
+                $selected={categories === item}
+                onClick={() => {
+                  setCategories(() => item);
+                }}
+              >
+                {item}
+              </SmallSlideItem>
+            ))
+          : ITEM_CATEGORIES.map((item) => (
+              <SmallSlideItem
+                $selected={categories === item}
+                onClick={() => {
+                  setCategories(() => item);
+                }}
+              >
+                {item}
+              </SmallSlideItem>
+            ))}
       </SliderBox>
     </div>
   );
