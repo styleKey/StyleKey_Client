@@ -13,15 +13,19 @@ import StylePointDetail from '../components/stylepoints/StylePointDetail';
 
 function ResultPage() {
   // 로컬 스토리지에서 testResultDetails 배열을 가져옵니다.
+
   const storedTestResultDetailsString =
     localStorage.getItem('testResultDetails');
   if (storedTestResultDetailsString !== null) {
     const storedTestResultDetails = JSON.parse(storedTestResultDetailsString);
     console.log(storedTestResultDetails);
     console.log(typeof storedTestResultDetails[0].style_point_id); // 이것은 변수의 타입을 콘솔에 출력합니다.
+
     const styleDetails = StylePointDetail({
       id: storedTestResultDetails[0].style_point_id,
     });
+    const styledetailLines = styleDetails?.styledetail.split('\n');
+    const lastLineIndex = styledetailLines ? styledetailLines.length - 1 : 0;
     console.log(styleDetails);
     return (
       <MobileLayout>
@@ -32,11 +36,14 @@ function ResultPage() {
                 당신의 패션 유형은
               </Text>
               <R.KeyTypo>
-                {styleDetails?.styledetail.split('\n').map((line, index) => (
-                  <p key={index}>{line}</p>
+                {styledetailLines?.map((line, index) => (
+                  <p key={index}>
+                    {line}
+                    <span>
+                      {index === lastLineIndex && styleDetails?.stylepoint}
+                    </span>
+                  </p>
                 ))}
-                {'   '}
-                <span>{styleDetails?.stylepoint}</span>
               </R.KeyTypo>
               <Text $fontSize={12} $fontWeight={400} $marginTop={5}>
                 {styleDetails?.stylepoint} 포인트가{' '}
