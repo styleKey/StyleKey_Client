@@ -32,7 +32,12 @@ function ResultPage() {
                 당신의 패션 유형은
               </Text>
               <R.KeyTypo>
-                {styleDetails?.styledetail}
+                {styleDetails?.styledetail.split('\n').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
                 {'   '}
                 <span>{styleDetails?.stylepoint}</span>
               </R.KeyTypo>
