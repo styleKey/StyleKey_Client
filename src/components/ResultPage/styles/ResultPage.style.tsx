@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Text, Button } from '../../common/Common';
+import { Button } from '../../common/Common';
 
 export const ContentsBox = styled.div`
   width: 100%;
