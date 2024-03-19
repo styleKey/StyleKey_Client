@@ -24,6 +24,9 @@ function ResultPage() {
     const styleDetails = StylePointDetail({
       id: storedTestResultDetails[0].style_point_id,
     });
+    const styleDetails2 = StylePointDetail({
+      id: storedTestResultDetails[1].style_point_id,
+    });
     const styledetailLines = styleDetails?.styledetail.split('\n');
     const lastLineIndex = styledetailLines ? styledetailLines.length - 1 : 0;
     console.log(styleDetails);
@@ -60,6 +63,7 @@ function ResultPage() {
               ></img>
             </R.ImgWrapper>
             <Description
+              styledetailLines={styledetailLines}
               stylePoint={styleDetails?.stylepoint}
               details={styleDetails?.details}
             />
@@ -69,8 +73,9 @@ function ResultPage() {
             </R.LinkButton>
             <MoreBox
               title="이런 유형도 잘 어울려요!"
-              caption="Y2K감성을 재해석한 빈티지한 레트로 "
-              btnText="레트로 포인트 보기"
+              imgSrc={storedTestResultDetails[1].style_point_image}
+              caption={`${styleDetails2?.styledetail} ${styleDetails2?.stylepoint}`}
+              btnText={`${styleDetails2?.stylepoint} 포인트 보기`}
             />
             <MoreBox
               title="이런 코디룩은 어때요?"
