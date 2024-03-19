@@ -39,9 +39,11 @@ function ResultPage() {
                 {styledetailLines?.map((line, index) => (
                   <p key={index}>
                     {line}
-                    <span>
-                      {index === lastLineIndex && styleDetails?.stylepoint}
-                    </span>
+                    {index === lastLineIndex && (
+                      <R.StyleResultTypo>
+                        {styleDetails?.stylepoint}
+                      </R.StyleResultTypo>
+                    )}
                   </p>
                 ))}
               </R.KeyTypo>

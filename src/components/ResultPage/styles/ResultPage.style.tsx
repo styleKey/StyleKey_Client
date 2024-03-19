@@ -26,10 +26,13 @@ export const KeyTypo = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+`;
 
-  & > span {
-    box-shadow: inset 0 -0.9rem #d9d9d9;
-  }
+export const StyleResultTypo = styled.span`
+  margin-left: 2px;
+  padding-left: 4px;
+  padding-right: 3.5px;
+  box-shadow: inset 0rem -1rem 0rem #d9d9d9;
 `;
 
 export const ImgWrapper = styled.div`
