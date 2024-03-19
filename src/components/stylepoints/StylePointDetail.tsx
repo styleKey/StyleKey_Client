@@ -25,7 +25,7 @@ const StylePointDetail = ({ id }: StylePoint): StylePointDetails | null => {
     case 2:
       return {
         stylepoint: '스트릿',
-        styledetail: '격식을 갖추지 않고 길거리에서 편하게 입을 수 있는 힙한',
+        styledetail: '서브컬쳐와 힙한 무드가 공존하는',
         details: [
           '스트릿 포인트는 국내외에서 대중적으로 가장 많이 보이는 패션 중 하나입니다.',
           '말 그대로 길거리 사람들의 패션을 일컫는 말이기도 하지만 힙합, 보드문화, 올드스쿨 스타일이 가장 주된 스타일이며 도시의 생동감과 자유로움을 표현하는 패션 유형입니다.',
@@ -50,8 +50,7 @@ const StylePointDetail = ({ id }: StylePoint): StylePointDetails | null => {
     case 4:
       return {
         stylepoint: '노멀',
-        styledetail:
-          '일상적이고 평범한 착장이 무난하지 않도록 센스있는 포인트가 들어간',
+        styledetail: '무난하면서도 센스 포인트가 가득한',
         details: [
           '노멀 포인트는 일반적이라는 뜻의 놈(Norm)과 핵심적이라는 뜻의 코어(Core)의 합성어로, ‘평범하고 일반적인 것들이 핵심이 된다.’라는 의미를 가지고 있습니다.',
           '쉽게 말해 ‘평범하지만 센스 있는 스타일’을 가리키는 것입니다.',
@@ -65,8 +64,7 @@ const StylePointDetail = ({ id }: StylePoint): StylePointDetails | null => {
     case 5:
       return {
         stylepoint: '러블리',
-        styledetail:
-          '사랑스러운 소녀같이 귀엽고 로맨틱 하면서 여성스러운 무드를 강조한',
+        styledetail: '사랑스러움과 로맨틱이 넘쳐나는',
         details: [
           '러블리 포인트는 여성스러우면서도 사랑스러운 이미지를 표현하는 패션을 선호합니다.',
           '이 유형은 로맨틱하고 부드러운 느낌을 좋아하는 패션 문화를 반영하며, 플라워 프린트, 레이스, 리본 등의 로맨틱한 디테일과 파스텔 톤의 컬러 팔레트를 선호합니다.',
@@ -80,8 +78,7 @@ const StylePointDetail = ({ id }: StylePoint): StylePointDetails | null => {
     case 6:
       return {
         stylepoint: '레트로',
-        styledetail:
-          '1990-2000년대의 감성을 재해석하여 오래된 듯한 멋진 느낌이 드는',
+        styledetail: 'Y2K감성을 재해석한 빈티지한 레트로',
         details: [
           '레트로 포인트는 90년대와 2000년대 초기의 패션 요소를 현대적으로 재해석하여, 그 시대의 특유의 분위기를 살리면서도 현대적인 패션 감각을 유지하는 것을 선호하는 유형입니다.',
           '빈티지한 프린트, 고전적인 실루엣, 레트로한 컬러 등 다양한 방식을 활용하여 고유한 매력을 강조합니다.',
@@ -105,8 +102,7 @@ const StylePointDetail = ({ id }: StylePoint): StylePointDetails | null => {
     case 8:
       return {
         stylepoint: '액티브',
-        styledetail:
-          '스포츠웨어와 일상복의 경계를 허물고 활동적인 이미지를 표현하는',
+        styledetail: '일상의 경계를 허무는 스포티한',
         details: [
           '액티브 포인트는 편안한 스포츠웨어, 실용적인 아웃도어 아이템, 편안한 스니커즈 등을 활용하여 활동적인 라이프스타일을 표현하는 패션 유형입니다.',
           '에슬래저룩이나, 고프코어룩이 이에 포함되며, 기능성을 중시한 디자인에서 건강과 레저를 위한 밝은 색상의 디자인에 이르기까지 활동적인 이미지를 표현한 스타일입니다.',
