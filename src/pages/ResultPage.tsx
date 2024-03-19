@@ -32,7 +32,7 @@ function ResultPage() {
                 당신의 패션 유형은
               </Text>
               <R.KeyTypo>
-                {styleDetails?.details}
+                {styleDetails?.styledetail}
                 {'   '}
                 <span>{styleDetails?.stylepoint}</span>
               </R.KeyTypo>
