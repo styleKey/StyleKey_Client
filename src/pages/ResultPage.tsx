@@ -33,10 +33,7 @@ function ResultPage() {
               </Text>
               <R.KeyTypo>
                 {styleDetails?.styledetail.split('\n').map((line, index) => (
-                  <span key={index}>
-                    {line}
-                    <br />
-                  </span>
+                  <p key={index}>{line}</p>
                 ))}
                 {'   '}
                 <span>{styleDetails?.stylepoint}</span>
