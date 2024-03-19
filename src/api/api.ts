@@ -10,10 +10,9 @@ interface Request<D, P> {
 
 // TODO: 응답 데이터 타입 설정
 interface Response<R> {
-  /**
-   * status
-   * isSuccess
-   */
+  code: number;
+  status: string;
+  message: string;
   data: R;
 }
 
@@ -25,7 +24,7 @@ async function request<D, P, R>({ url, method, data, params }: Request<D, P>) {
     params,
   });
 
-  return response;
+  return response.data;
 }
 
 export default request;
