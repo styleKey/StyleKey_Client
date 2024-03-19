@@ -32,7 +32,8 @@ function ResultPage() {
                 당신의 패션 유형은
               </Text>
               <R.KeyTypo>
-                변화에 민감하고 <br /> 개성을 추구하는{'   '}
+                {styleDetails?.details}
+                {'   '}
                 <span>{styleDetails?.stylepoint}</span>
               </R.KeyTypo>
               <Text $fontSize={12} $fontWeight={400} $marginTop={5}>
