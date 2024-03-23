@@ -119,5 +119,8 @@
 
 - 서버 통신 상태관리는 Tanstack 쿼리를 사용했습니다. 테스트 페이지 코드를 자세히 살펴보시면 staleTime과 gcTime을 설정해서 사용자가 테스트 페이지로 다시 돌아가도 6분이 넘은 시점이 아니면 서버에 요청 보내지 않게 최적화한 상태입니다.
 
+<br/>
+<img src="https://media.giphy.com/media/igPDtkfSJZMFwE0LP8/giphy.gif" width="80" />
 
-## 인수인계 코드 설명과 관련해서 문의사항이 있으시면 jin04007@naver.com으로 연락주시면 감사하겠습니다.
+### 인수인계 코드 설명과 관련해서 문의사항이 있으시면  jin04007@naver.com으로 연락주시면 감사하겠습니다.
+
