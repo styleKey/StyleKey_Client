@@ -51,6 +51,30 @@
 - 처음 데이터를 받아온 후 10분 동안 동일한 요청에 대해서는 캐시에 저장된 데이터를 쓰게 됩니다.
 - 질문지와 선택지가 유동적으로 바뀌지 않기 때문에 staleTime과 gcTime을 10분으로 설정하였습니다.
   
-  ```js
+ ```js
   const queryResult = useQuery({
-    qu지
+    queryKey: ['testinfo'],
+    queryFn: requestGet,
+    staleTime: 600000, //테스트 문제 받아오는 건 처음만 받아오고 10분 동안은 안 받아오게 설정
+    gcTime: 600000, //캐시에도 10분동안 남아있도록 설정
+  });
+  return queryResult;
+  ```
+- 이미지가 텍스트 보다 느리게 렌더링 되는 문제는 이미지를 미리 캐시에 저장하는 방식으로 해결하였습니다.
+  ```js
+  useEffect(() => {
+  if (questions && currentQuestionIndex < questions.length - 1) {
+  const nextQuestionImage = new Image();
+  nextQuestionImage.src = questions[currentQuestionIndex + 1].image_url;
+  }
+  }, [currentQuestionIndex, questions]);
+  ```
+
+### 2. 좋아요 기능
+- 사용자가 여러번 좋아요를 클릭할 경우, 서버에 계속된 요청으로 과부하를 일으킬 수 있습니다.<br>따라서 해당 문제는 사용자가 페이지를 벗어날 때만 백엔드에 요청을 보내는 식으로 해결하였습니다.
+
+<br>
+
+## 📝 Trouble Shooting
+
+<br>
