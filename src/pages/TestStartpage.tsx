@@ -11,9 +11,9 @@ function TestStartPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (questions && questions.length > 0) {
+    if (questions && questions.data && questions.data.length > 0) {
       const firstImage = new Image();
-      firstImage.src = questions[0].image_url;
+      firstImage.src = questions.data[0].image_url;
     }
   }, [questions]);
 
