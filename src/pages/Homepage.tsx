@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import * as Ho from '../components/HomePage/styles/Homepage.styles';
 import MobileLayout from '../components/common/Layout';
-import stylekeylogo from '../components/loginpage/images/stylekeylogo.svg';
+
 import DownButton from '../components/HomePage/images/Downbutton.svg';
 import Slide from '../components/swiper/Swiper';
-import { useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 const Homepage: React.FC = () => {
@@ -13,10 +13,6 @@ const Homepage: React.FC = () => {
   const navigateToTestPage = () => {
     navigate('/teststart');
   };
-  useEffect(() => {
-    const img = new Image();
-    img.src = stylekeylogo;
-  }, []);
   const testAccessToken = localStorage.getItem('accessToken');
   console.log('accessToken:', testAccessToken);
   const homeBottomRef = useRef<HTMLDivElement>(null);
