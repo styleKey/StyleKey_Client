@@ -1,6 +1,6 @@
 import MobileLayout from '../components/common/Layout';
 import * as L from '../components/loginpage/styles/Login.style';
-import stylekeylogo from '../components/loginpage/images/stylekeymark.png';
+import stylekeylogo from '../components/loginpage/images/stylekeylogo.svg';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { FadeInText, FadeInButton } from '../components/common/Common';
@@ -11,9 +11,9 @@ function TestStartPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (questions && questions.length > 0) {
+    if (questions && questions.data && questions.data.length > 0) {
       const firstImage = new Image();
-      firstImage.src = questions[0].image_url;
+      firstImage.src = questions.data[0].image_url;
     }
   }, [questions]);
 
