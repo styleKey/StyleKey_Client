@@ -10,7 +10,7 @@ export const GridLayout = styled.div`
   gap: 16px 20px;
 `;
 // TODO: 이미지, 좋아요 표시 여부,
-export const Box = styled.div<{ itemImg?: string }>`
+export const Box = styled.div<{ itemImgSrc: string }>`
   position: relative;
   width: 169px;
   height: 261px;
@@ -18,7 +18,11 @@ export const Box = styled.div<{ itemImg?: string }>`
   border-radius: 12px;
   border: 2px solid var(--Foundation-Grey-Normal, #999);
   /* background: var(--White, #fff); */
-  background-image: url(itemImg);
+  background-image: ${({ itemImgSrc }) =>
+    itemImgSrc ? `url(${itemImgSrc})` : `url()`};
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 
   cursor: pointer;
 `;
