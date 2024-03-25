@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Text, Button } from '../../common/Common';
+import { Button } from '../../common/Common';
 
 export const ContentsBox = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ export const ContentsBox = styled.div`
 
   margin-top: 24px;
   border-radius: 12px;
-  padding: 25px 19px;
+  padding: 25px 0px;
   background: var(--White, #fff);
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
 
@@ -26,10 +26,13 @@ export const KeyTypo = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+`;
 
-  & > span {
-    box-shadow: inset 0 -0.9rem #d9d9d9;
-  }
+export const StyleResultTypo = styled.span`
+  margin-left: 2px;
+  padding-left: 4px;
+  padding-right: 3.5px;
+  box-shadow: inset 0rem -1rem 0rem #d9d9d9;
 `;
 
 export const ImgWrapper = styled.div`
@@ -38,8 +41,14 @@ export const ImgWrapper = styled.div`
   margin-top: 14px;
 `;
 
-export const Title = styled(Text)`
-  box-shadow: inset 0 -0.65rem #d9d9d9;
+export const Title = styled.span`
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  box-shadow: inset 0rem -0.75rem 0rem #d9d9d9;
 `;
 
 export const Line = styled.div`
@@ -47,7 +56,9 @@ export const Line = styled.div`
   height: 1px;
   background-color: black;
 `;
-
+export const ListItemContainer = styled.div`
+  padding: 0px 19px;
+`;
 export const ListItem = styled.li`
   list-style-type: disc;
   margin-left: 20px;

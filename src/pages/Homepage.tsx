@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Homepage: React.FC = () => {
   const navigate = useNavigate();
-
   const navigateToTestPage = () => {
     navigate('/teststart');
   };

@@ -13,15 +13,22 @@ import StylePointDetail from '../components/stylepoints/StylePointDetail';
 
 function ResultPage() {
   // 로컬 스토리지에서 testResultDetails 배열을 가져옵니다.
+
   const storedTestResultDetailsString =
     localStorage.getItem('testResultDetails');
   if (storedTestResultDetailsString !== null) {
     const storedTestResultDetails = JSON.parse(storedTestResultDetailsString);
     console.log(storedTestResultDetails);
     console.log(typeof storedTestResultDetails[0].style_point_id); // 이것은 변수의 타입을 콘솔에 출력합니다.
+
     const styleDetails = StylePointDetail({
       id: storedTestResultDetails[0].style_point_id,
     });
+    const styleDetails2 = StylePointDetail({
+      id: storedTestResultDetails[1].style_point_id,
+    });
+    const styledetailLines = styleDetails?.styledetail.split('\n');
+    const lastLineIndex = styledetailLines ? styledetailLines.length - 1 : 0;
     console.log(styleDetails);
     return (
       <MobileLayout>
@@ -32,13 +39,21 @@ function ResultPage() {
                 당신의 패션 유형은
               </Text>
               <R.KeyTypo>
-                변화에 민감하고 <br /> 개성을 추구하는{'   '}
-                <span>{styleDetails?.stylepoint}</span>
+                {styledetailLines?.map((line, index) => (
+                  <p key={index}>
+                    {line}
+                    {index === lastLineIndex && (
+                      <R.StyleResultTypo>
+                        {styleDetails?.stylepoint}
+                      </R.StyleResultTypo>
+                    )}
+                  </p>
+                ))}
               </R.KeyTypo>
               <Text $fontSize={12} $fontWeight={400} $marginTop={5}>
-                전체 패션 포인트 중{' '}
-                {(storedTestResultDetails[0].score / 8) * 100}%의{' '}
-                <span>{styleDetails?.stylepoint}</span> 포인트가 나왔어요!{' '}
+                {styleDetails?.stylepoint} 포인트가{' '}
+                {(storedTestResultDetails[0].score / 8) * 100}%로 제일 높게
+                나왔어요!
               </Text>
             </div>
             <R.ImgWrapper>
@@ -48,6 +63,7 @@ function ResultPage() {
               ></img>
             </R.ImgWrapper>
             <Description
+              styledetailLines={styledetailLines}
               stylePoint={styleDetails?.stylepoint}
               details={styleDetails?.details}
             />
@@ -57,8 +73,9 @@ function ResultPage() {
             </R.LinkButton>
             <MoreBox
               title="이런 유형도 잘 어울려요!"
-              caption="Y2K감성을 재해석한 빈티지한 레트로 "
-              btnText="레트로 포인트 보기"
+              imgSrc={storedTestResultDetails[1].style_point_image}
+              caption={`${styleDetails2?.styledetail} ${styleDetails2?.stylepoint}`}
+              btnText={`${styleDetails2?.stylepoint} 포인트 보기`}
             />
             <MoreBox
               title="이런 코디룩은 어때요?"
