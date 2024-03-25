@@ -11,7 +11,12 @@ function TestStartPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (questions && questions.data && questions.data.length > 0) {
+    if (
+      typeof window !== 'undefined' &&
+      questions &&
+      questions.data &&
+      questions.data.length > 0
+    ) {
       const firstImage = new Image();
       firstImage.src = questions.data[0].image_url;
     }
