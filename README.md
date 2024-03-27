@@ -122,5 +122,5 @@
 <br/>
 <img src="https://media.giphy.com/media/igPDtkfSJZMFwE0LP8/giphy.gif" width="80" />
 
-### 인수인계 코드 설명과 관련해서 문의사항이 있으시면  jin04007@naver.com으로 연락주시면 감사하겠습니다.
+### 인수인계 코드 설명과 관련해서 문의사항이 있으시면  jin04007@naver.com으로 연락주시면 감사하겠습니다!
 
